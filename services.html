@@ -1,0 +1,33 @@
+---
+layout: page
+title: Services
+permalink: /services
+---
+
+Pick a service below. Each card opens a detailed page with a booking form.
+
+<div class="sticky-grid">
+  <a class="sticky-card" href="/services/seo">
+    <h3>SEO Strategy</h3>
+    <p>Technical + On-page + Content roadmap</p>
+  </a>
+  <a class="sticky-card" href="/services/sem">
+    <h3>Google Ads (SEM)</h3>
+    <p>Search, Performance Max, Display</p>
+  </a>
+  <a class="sticky-card" href="/services/smm">
+    <h3>Social Media Marketing</h3>
+    <p>Organic + Paid social growth</p>
+  </a>
+  <a class="sticky-card" href="/services/content">
+    <h3>Content Marketing</h3>
+    <p>Calendars, briefs, and distribution</p>
+  </a>
+</div>
+
+<style>
+/***** Quick layout fallback if CSS fails to load *****/
+.sticky-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.sticky-card { display:block; background: #fff6a9; padding: 1rem; border: 1px solid #f0d85a; color: #222; text-decoration: none; box-shadow: 0 8px 18px rgba(0,0,0,0.08); transform: rotate(-1deg); }
+.sticky-card:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.12); transform: rotate(0deg) translateY(-2px); }
+</style>
