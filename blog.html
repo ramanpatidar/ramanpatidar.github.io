@@ -4,100 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog - Raman Patidar</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 40px;
-    }
-    header h1 {
-      color: #38bdf8;
-      font-size: 2.5rem;
-    }
-    .blog-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .blog-card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-      transition: transform 0.3s;
-    }
-    .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-    }
-    .blog-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .blog-card h2 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-    .blog-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-    .btn {
-      display: inline-block;
-      background: #38bdf8;
-      color: black;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .btn:hover {
-      background: #0ea5e9;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>My Blog</h1>
-    <p>Sharing thoughts and insights on Digital Marketing, SEO, and Online Growth</p>
+  <header class="hero small">
+    <h1>Blog</h1>
   </header>
 
-  <div class="blog-container">
-    <!-- Blog Post 1 -->
-    <div class="blog-card">
-      <img src="https://source.unsplash.com/600x300/?seo,digital" alt="SEO">
-      <h2>Importance of SEO for Businesses</h2>
-      <p>SEO is the backbone of digital marketing. It helps businesses get visibility, attract organic traffic, and build brand authority on Google.</p>
-      <a href="#" class="btn">Read More</a>
-    </div>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="book.html">Contact</a>
+  </nav>
 
-    <!-- Blog Post 2 -->
-    <div class="blog-card">
-      <img src="https://source.unsplash.com/600x300/?marketing,socialmedia" alt="Social Media">
-      <h2>Social Media Trends in 2025</h2>
-      <p>Social platforms are evolving fast. Learn about the latest trends and strategies to engage your audience effectively.</p>
-      <a href="#" class="btn">Read More</a>
-    </div>
+  <section class="blog">
+    <article>
+      <h2>Getting Started with SEO</h2>
+      <p>SEO is the backbone of digital marketing. It helps businesses rank higher in search engines and gain visibility...</p>
+    </article>
 
-    <!-- Blog Post 3 -->
-    <div class="blog-card">
-      <img src="https://source.unsplash.com/600x300/?google,ads" alt="Google Ads">
-      <h2>Getting Started with Google Ads</h2>
-      <p>Running ads on Google can bring quick traffic. Here’s a beginner-friendly guide to launching your first campaign.</p>
-      <a href="#" class="btn">Read More</a>
-    </div>
-  </div>
+    <article>
+      <h2>Keyword Research Basics</h2>
+      <p>Keyword research is the first step in creating a strong SEO strategy. Learn how to pick the right keywords...</p>
+    </article>
+  </section>
 </body>
 </html>
