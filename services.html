@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    <div class="container">
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Marketing Services</title>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
     :root{
@@ -43,6 +35,7 @@
     nav a:hover{opacity:.7}
 
     .container{max-width:1000px;margin:40px auto;padding:0 20px;}
+
     .section{
       background:var(--card);
       border-radius:20px;
@@ -52,13 +45,26 @@
       box-shadow:0 4px 20px rgba(0,0,0,0.05);
     }
     .section h2{margin-bottom:16px;color:var(--accent);font-size:22px;}
+    .section .lead{color:var(--muted);}
 
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{background:var(--gradient);color:white;padding:8px 14px;border-radius:30px;font-size:14px;}
+    .service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .service-tags span{background:rgba(108,99,255,0.12);color:#4338ca;padding:6px 12px;border-radius:14px;font-size:12px;}
 
-    .project{border-left:4px solid var(--accent);padding:14px 16px;border-radius:8px;background:rgba(108,99,255,0.03);margin-bottom:12px}
-    .project h3{margin:0 0 6px 0}
-    .project ul{margin:8px 0 0 18px}
+    .service-header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .service-icon{font-size:24px}
+    .service-title{font-size:20px;color:var(--text);margin:0}
+
+    .service-summary{color:var(--muted);margin:6px 0 12px}
+
+    .service-points{margin:8px 0 0 18px}
+    .service-points li{margin:4px 0}
+
+    .service-meta{margin-top:12px;color:var(--muted);font-weight:500}
+
+    .cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid #e5e7eb;text-decoration:none;color:var(--text);background:white;transition:all .25s}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+    .btn.primary{background:var(--accent);color:white;border-color:transparent}
 
     footer{
       text-align:center;
@@ -75,102 +81,140 @@
     .profile-pic img{width:100%;height:100%;object-fit:cover;}
 
     /* Responsive */
-    @media(max-width:768px){header h1{font-size:28px;}header p.lead{font-size:16px;}}
- </style>
+    @media(max-width:768px){
+      header h1{font-size:28px;}
+      header p.lead{font-size:16px;}
+    }
+  </style>
 </head>
 <body>
 
-<div class="section">
-    <section id="Digital Marketing Services" class="section">
-  <h2>Digital Marketing Services</h2>
-  <p class="lead">Practical, results-focused marketing for founders and small teams. Pick a service to view details and book.</p>
-  <div class="service-tags">
-    <span>Strategy</span><span>Execution</span><span>Optimization</span>
+  <header>
+    <h1>Digital Marketing Services</h1>
+    <p class="lead">Practical, results-focused marketing for founders and small teams.</p>
+    <nav>
+      <a href="#digital-marketing-overview">Overview</a>
+      <a href="#seo-strategy">SEO Strategy</a>
+      <a href="#content-marketing">Content Marketing</a>
+      <a href="#google-ads">Google Ads (SEM)</a>
+      <a href="#social-media-marketing">Social Media</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Overview -->
+    <section id="digital-marketing-overview" class="section" aria-label="Digital Marketing Overview">
+      <h2>Overview</h2>
+      <p class="lead">Pick a service to view details and book.</p>
+      <div class="service-tags" aria-label="Service Tags">
+        <span>Strategy</span>
+        <span>Execution</span>
+        <span>Optimization</span>
+      </div>
     </section>
-  </div>
-</div>
 
-<h2 class="section-title">SEO & Content</h2>
-<div class="service-grid">
-  <div class="service-card">
-    <div class="service-icon">🔎</div>
-    <h3>SEO Strategy</h3>
-    <p>Technical audit, on-page fixes, and content roadmap to grow qualified traffic.</p>
-    <ul class="service-points">
-      <li>Technical + on-page audit</li>
-      <li>Keyword & content plan</li>
-      <li>Prioritized roadmap</li>
-    </ul>
-    <div class="service-meta">
-      <span class="price">Starter & Pro tiers</span>
-    </div>
-    <div class="cta">
-      <a class="btn primary" href="/services/seo">View details</a>
-      <a class="btn" href="/services/seo">Book now</a>
-    </div>
-  </div>
+    <!-- Service: SEO Strategy -->
+    <section id="seo-strategy" class="section" aria-label="SEO Strategy">
+      <div class="service-header">
+        <div class="service-icon" aria-hidden="true">🔎</div>
+        <h2 class="service-title">SEO Strategy</h2>
+      </div>
+      <p class="service-summary">Technical audit, on-page fixes, and content roadmap to grow qualified traffic.</p>
+      <ul class="service-points">
+        <li>Technical + on-page audit</li>
+        <li>Keyword & content plan</li>
+        <li>Prioritized roadmap</li>
+      </ul>
+      <div class="service-meta">
+        <span class="price">Starter & Pro tiers</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="/services/seo">View details</a>
+        <a class="btn" href="/services/seo">Book now</a>
+      </div>
+    </section>
 
-  <div class="service-card">
-    <div class="service-icon">✍️</div>
-    <h3>Content Marketing</h3>
-    <p>Editorial calendars, briefs, and distribution to drive rankings and leads.</p>
-    <ul class="service-points">
-      <li>Topic & brief creation</li>
-      <li>Publishing workflow</li>
-      <li>Distribution checklist</li>
-    </ul>
-    <div class="service-meta">
-      <span class="price">Flexible scope</span>
-    </div>
-    <div class="cta">
-      <a class="btn primary" href="/services/content">View details</a>
-      <a class="btn" href="/services/content">Book now</a>
-    </div>
-  </div>
-</div>
+    <!-- Service: Content Marketing -->
+    <section id="content-marketing" class="section" aria-label="Content Marketing">
+      <div class="service-header">
+        <div class="service-icon" aria-hidden="true">✍️</div>
+        <h2 class="service-title">Content Marketing</h2>
+      </div>
+      <p class="service-summary">Editorial calendars, briefs, and distribution to drive rankings and leads.</p>
+      <ul class="service-points">
+        <li>Topic & brief creation</li>
+        <li>Publishing workflow</li>
+        <li>Distribution checklist</li>
+      </ul>
+      <div class="service-meta">
+        <span class="price">Flexible scope</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="/services/content">View details</a>
+        <a class="btn" href="/services/content">Book now</a>
+      </div>
+    </section>
 
-<h2 class="section-title">Ads & Social</h2>
-<div class="service-grid">
-  <div class="service-card">
-    <div class="service-icon">💡</div>
-    <h3>Google Ads (SEM)</h3>
-    <p>Full-funnel campaigns across Search, PMax and Display with crisp reporting.</p>
-    <ul class="service-points">
-      <li>Account structure & GTM</li>
-      <li>Creative & keyword tests</li>
-      <li>Weekly optimization</li>
-    </ul>
-    <div class="service-meta">
-      <span class="price">Monthly plans</span>
-    </div>
-    <div class="cta">
-      <a class="btn primary" href="/services/sem">View details</a>
-      <a class="btn" href="/services/sem">Book now</a>
-    </div>
-  </div>
+    <!-- Service: Google Ads (SEM) -->
+    <section id="google-ads" class="section" aria-label="Google Ads (SEM)">
+      <div class="service-header">
+        <div class="service-icon" aria-hidden="true">💡</div>
+        <h2 class="service-title">Google Ads (SEM)</h2>
+      </div>
+      <p class="service-summary">Full-funnel campaigns across Search, PMax and Display with crisp reporting.</p>
+      <ul class="service-points">
+        <li>Account structure & GTM</li>
+        <li>Creative & keyword tests</li>
+        <li>Weekly optimization</li>
+      </ul>
+      <div class="service-meta">
+        <span class="price">Monthly plans</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="/services/sem">View details</a>
+        <a class="btn" href="/services/sem">Book now</a>
+      </div>
+    </section>
 
-  <div class="service-card">
-    <div class="service-icon">📣</div>
-    <h3>Social Media Marketing</h3>
-    <p>Organic + paid programs to build community and drive measurable actions.</p>
-    <ul class="service-points">
-      <li>Content pillars & cadence</li>
-      <li>Paid social testing</li>
-      <li>Reporting & insights</li>
-    </ul>
-    <div class="service-meta">
-      <span class="price">Monthly plans</span>
-    </div>
-    <div class="cta">
-      <a class="btn primary" href="/services/smm">View details</a>
-      <a class="btn" href="/services/smm">Book now</a>
-    </div>
-  </div>
-</div>
+    <!-- Service: Social Media Marketing -->
+    <section id="social-media-marketing" class="section" aria-label="Social Media Marketing">
+      <div class="service-header">
+        <div class="service-icon" aria-hidden="true">📣</div>
+        <h2 class="service-title">Social Media Marketing</h2>
+      </div>
+      <p class="service-summary">Organic + paid programs to build community and drive measurable actions.</p>
+      <ul class="service-points">
+        <li>Content pillars & cadence</li>
+        <li>Paid social testing</li>
+        <li>Reporting & insights</li>
+      </ul>
+      <div class="service-meta">
+        <span class="price">Monthly plans</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="/services/smm">View details</a>
+        <a class="btn" href="/services/smm">Book now</a>
+      </div>
+    </section>
 
-<p class="services-note">Prefer to discuss first? Reach me at <a href="mailto:ramanpatidar36@gmail.com">ramanpatidar36@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/ramanpatidar36" target="_blank" rel="noopener">LinkedIn</a>.</p>
-</body>
-</html>
-    </div>
+    <section class="section" aria-label="Contact">
+      <p class="services-note">
+        Prefer to discuss first? Reach me at
+        <a href="mailto:ramanpatidar36@gmail.com">ramanpatidar36@gmail.com</a>
+        or connect on
+        <a href="https://www.linkedin.com/in/ramanpatidar36" target="_blank" rel="noopener">LinkedIn</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Digital Marketing Services
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
