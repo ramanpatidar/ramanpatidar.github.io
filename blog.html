@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio with Animated Buttons</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root{
+          --bg:#fdfcfb;
+          --card:#ffffffcc;
+          --accent:#6c63ff;
+          --muted:#6b7280;
+          --text:#1f2937;
+          --gradient:linear-gradient(135deg,#6c63ff,#a78bfa);
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+        
+        header{
+          background:var(--gradient);
+          color:white;
+          text-align:center;
+          padding:60px 20px;
+          border-bottom-left-radius:40px;
+          border-bottom-right-radius:40px;
+          box-shadow:0 8px 24px rgba(0,0,0,0.1);
+        }
+        h1 h2 h3 h4 h5 h6{font-size:36px;margin-bottom:8px;}
+        header p.lead{font-size:18px;color:#e5e7eb;}
+        nav{margin-top:20px;}
+        nav a{margin:0 12px;text-decoration:none;color:white;font-weight:500;transition:opacity .3s}
+        nav a:hover{opacity:.7}
+
+        .container{max-width:1000px;margin:40px auto;padding:0 20px;}
+        .section{
+          background:var(--card);
+          border-radius:20px;
+          padding:30px;
+          margin-bottom:30px;
+          backdrop-filter:blur(8px);
+          box-shadow:0 4px 20px rgba(0,0,0,0.05);
+        }
+        .section h2{margin-bottom:16px;color:var(--accent);font-size:22px;}
+h2{margin-bottom:16px;color:var(--accent);font-size:22px;}
+        /* BUTTON STYLES - Using the skills styling */
+        .buttons-container{display:flex;flex-wrap:wrap;gap:15px;margin:20px 0;}
+        
+        .button{
+          background:var(--gradient);
+          color:white;
+          padding:12px 24px;
+          border-radius:30px;
+          font-size:16px;
+          border:none;
+          cursor:pointer;
+          transition:all 0.3s ease;
+          font-family:'Poppins',sans-serif;
+          font-weight:500;
+          position:relative;
+          overflow:hidden;
+        }
+
+        /* Hover Animations */
+        .button-scale:hover{
+          transform:scale(1.05);
+          box-shadow:0 8px 20px rgba(108,99,255,0.3);
+        }
+
+        .button-slide:hover{
+          transform:translateY(-3px);
+          box-shadow:0 6px 15px rgba(108,99,255,0.25);
+        }
+
+        .button-glow:hover{
+          box-shadow:0 0 15px rgba(108,99,255,0.6);
+          transform:translateY(-2px);
+        }
+
+        .button-rotate:hover{
+          transform:rotate(-2deg) scale(1.02);
+        }
+
+        .button-pulse:hover{
+          animation:pulse 0.5s ease-in-out;
+        }
+
+        @keyframes pulse{
+          0%{transform:scale(1);}
+          50%{transform:scale(1.05);}
+          100%{transform:scale(1);}
+        }
+
+        .button-ripple{
+          position:relative;
+          overflow:hidden;
+        }
+
+        .button-ripple:hover::after{
+          content:'';
+          position:absolute;
+          top:50%;
+          left:50%;
+          width:0;
+          height:0;
+          border-radius:50%;
+          background:rgba(255,255,255,0.3);
+          transform:translate(-50%,-50%);
+          animation:ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple{
+          0%{width:0;height:0;opacity:1;}
+          100%{width:300px;height:300px;opacity:0;}
+        }
+
+        footer{
+          text-align:center;
+          padding:20px;
+          margin-top:40px;
+          font-size:14px;
+          color:var(--muted);
+        }
+        footer a{color:var(--accent);text-decoration:none}
+
+        .profile-pic{
+          width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 20px auto;box-shadow:0 6px 20px rgba(0,0,0,0.15);border:5px solid white;
+        }
+        .profile-pic img{width:100%;height:100%;object-fit:cover;}
+
+        /* Responsive */
+        @media(max-width:768px){
+          header h1{font-size:28px;}
+          header p.lead{font-size:16px;}
+          .buttons-container{justify-content:center;}
+        }
+    </style>
+</head>
+<header>
+<div class="container">
+    <div class=".container" style="text-align: auto; margin-bottom: 20px;">
+    <div class="container"> <h1><strong>The Methodical Marketer</strong></h1>
+        <h4>Welcome to The Methodical Marketer, your go-to resource for strategic marketing insights and tips. Explore our blog for the latest trends and strategies to elevate your marketing game.</h4>
+    <nav>
+            <a href="index.html"> <class class="button-ripple">Home</class></a>
+            <a href="index.html#about"><class class="button-ripple">About</class></a>
+            <a href="blog.html"><class class="button-ripple">Blog</class></a>
+            <a href="mailto:ramanpatidar36@gmail.com"><class class="button-ripple">Contact</class></a>
+    </nav></div>
+</header>
+<body>
+    <div class="container">
+        <div class="section h2">
+        <h2><strong>The Cornerstone of Modern Marketing (SEO)</strong></h2>
+        <p> In the chaotic digital landscape, many businesses chase the latest SEO "hacks" and algorithm updates, only to find their rankings—and their traffic—in constant flux. The Methodical Marketer believes in a different approach. We view SEO not as a dark art, but as a systematic process of making your website the most relevant, useful, and trustworthy resource for your audience. This begins with a foundation of deep keyword research, not to stuff into meta tags, but to understand the core questions and problems your potential customers are trying to solve. Our process extends far beyond keywords. We architect websites for both users and search engines, ensuring technical excellence with clean code, intuitive navigation, and blistering page speeds. We then build authority through a calculated content strategy, creating comprehensive pillar pages and supporting blog posts that thoroughly answer user queries. This isn't about gaming the system; it's about building a digital asset that earns its place at the top of the search results through unwavering quality and strategic structure. For us, SEO is a long-term investment, not a short-term gamble.  </p>
+          <section class="section">
+            <div class="buttons-container">
+            <button class="btn btn-ripple">ripple</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </body>
+    </html>
