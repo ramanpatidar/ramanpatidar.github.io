@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Service - Raman Patidar</title>
+  nav{
+          background:var(--gradient);
+          color:white;
+          text-align:center;
+          padding:1px 2px;
+          border-top-left-radius:40px;
+          border-top-right-radius:40px;
+          border-bottom-left-radius:40px;
+          border-bottom-right-radius:40px;
+          box-shadow:0 8px 24px rgba(0,0,0,0.2);
+        }
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -22,19 +33,19 @@
   <section class="form-section">
     <form id="bookingForm">
       <label>Name</label>
-      <input type="text" name="name" required>
+      <input type="text" name="name" required><br><br>
       
       <label>Contact Number</label>
-      <input type="text" name="contact" required>
+      <input type="text" name="contact" required><br><br>
       
       <label>Email</label>
-      <input type="email" name="email" required>
+      <input type="email" name="email" required><br><br>
       
       <label>WhatsApp</label>
-      <input type="text" name="whatsapp" required>
+      <input type="text" name="whatsapp" required><br><br>
       
       <label>Why do you want this service?</label>
-      <textarea name="reason" required></textarea>
+      <textarea name="reason" required></textarea><br><br>
       
       <button type="submit" class="btn">Submit</button>
     </form>
