@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GrowthVerse Dashboard - Manage your digital marketing campaigns and track your growth.">
+    <meta name="keywords" content="dashboard, user account, digital marketing management">
+    <title>Dashboard - GrowthVerse | Digital Marketing Management</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🚀</span>
+                    <span class="logo-text">GrowthVerse</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Welcome to Your Dashboard</h1>
+            <p>Manage your digital marketing campaigns and track your growth</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- User Info Card -->
+                <div class="dashboard-card fade-in">
+                    <div class="card-header">
+                        <h3>👤 Account Information</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <span id="userInitials">U</span>
+                            </div>
+                            <div class="user-details">
+                                <h4 id="userName">User Name</h4>
+                                <p id="userEmail">user@example.com</p>
+                                <p class="member-since">Member since <span id="memberSince">January 2025</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Card -->
+                <div class="dashboard-card fade-in">
+                    <div class="card-header">
+                        <h3>🚀 Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <a href="contact.html" class="action-btn">
+                                <span class="action-icon">📞</span>
+                                <span class="action-text">Get Consultation</span>
+                            </a>
+                            <a href="services.html" class="action-btn">
+                                <span class="action-icon">⚙️</span>
+                                <span class="action-text">View Services</span>
+                            </a>
+                            <a href="blog.html" class="action-btn">
+                                <span class="action-icon">📝</span>
+                                <span class="action-text">Read Blog</span>
+                            </a>
+                            <a href="#" class="action-btn" onclick="downloadReport()">
+                                <span class="action-icon">📊</span>
+                                <span class="action-text">Download Report</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign Overview Card -->
+                <div class="dashboard-card fade-in">
+                    <div class="card-header">
+                        <h3>📈 Campaign Overview</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Active Campaigns</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Total Leads</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">0%</div>
+                                <div class="stat-label">Conversion Rate</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">$0</div>
+                                <div class="stat-label">Revenue Generated</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Card -->
+                <div class="dashboard-card fade-in">
+                    <div class="card-header">
+                        <h3>🕒 Recent Activity</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">🎉</div>
+                                <div class="activity-content">
+                                    <p>Welcome to GrowthVerse!</p>
+                                    <span class="activity-time">Just now</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📧</div>
+                                <div class="activity-content">
+                                    <p>Account created successfully</p>
+                                    <span class="activity-time">Just now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Messages Card -->
+                <div class="dashboard-card fade-in">
+                    <div class="card-header">
+                        <h3>💬 Contact Messages</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="messages-list">
+                            <div class="no-messages">
+                                <p>No messages yet. <a href="contact.html">Send us a message</a> to get started!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Comments Card -->
+                <div class="dashboard-card fade-in">
+                    <div class="card-header">
+                        <h3>💭 Your Comments</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="comments-list">
+                            <div class="no-comments">
+                                <p>You haven't commented on any blog posts yet. <a href="blog.html">Check out our blog</a> and join the conversation!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🚀 GrowthVerse</h3>
+                    <p>Driving digital growth for businesses worldwide</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GrowthVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/auth.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Load user data and populate dashboard
+        function loadDashboard() {
+            const user = window.authSystem.getCurrentUser();
+            
+            if (!user) {
+                // Redirect to login if not authenticated
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Update user information
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userEmail').textContent = user.email;
+            
+            // Generate initials
+            const initials = user.name.split(' ').map(name => name[0]).join('').toUpperCase();
+            document.getElementById('userInitials').textContent = initials;
+            
+            // Format member since date
+            const joinDate = new Date(user.createdAt);
+            const monthYear = joinDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            document.getElementById('memberSince').textContent = monthYear;
+
+            // Load user's messages and comments
+            loadUserMessages(user.id);
+            loadUserComments(user.id);
+        }
+
+        // Load user's contact messages
+        function loadUserMessages(userId) {
+            const messages = JSON.parse(localStorage.getItem('growthverse_messages') || '[]');
+            const userMessages = messages.filter(msg => msg.userId === userId);
+            
+            const messagesList = document.querySelector('.messages-list');
+            
+            if (userMessages.length === 0) {
+                messagesList.innerHTML = '<div class="no-messages"><p>No messages yet. <a href="contact.html">Send us a message</a> to get started!</p></div>';
+            } else {
+                messagesList.innerHTML = userMessages.map(msg => `
+                    <div class="message-item">
+                        <div class="message-content">
+                            <p><strong>Subject:</strong> ${msg.subject || 'Contact Form'}</p>
+                            <p><strong>Message:</strong> ${msg.message}</p>
+                            <span class="message-time">${new Date(msg.timestamp).toLocaleDateString()}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Load user's blog comments
+        function loadUserComments(userId) {
+            const comments = JSON.parse(localStorage.getItem('growthverse_comments') || '[]');
+            const userComments = comments.filter(comment => comment.userId === userId);
+            
+            const commentsList = document.querySelector('.comments-list');
+            
+            if (userComments.length === 0) {
+                commentsList.innerHTML = '<div class="no-comments"><p>You haven\'t commented on any blog posts yet. <a href="blog.html">Check out our blog</a> and join the conversation!</p></div>';
+            } else {
+                commentsList.innerHTML = userComments.map(comment => `
+                    <div class="comment-item">
+                        <div class="comment-content">
+                            <p><strong>Post:</strong> ${comment.postTitle}</p>
+                            <p><strong>Comment:</strong> ${comment.comment}</p>
+                            <span class="comment-time">${new Date(comment.timestamp).toLocaleDateString()}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Download report function
+        function downloadReport() {
+            alert('Report download feature coming soon! Contact us for a detailed analysis of your campaigns.');
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', loadDashboard);
+    </script>
+</body>
+</html>
