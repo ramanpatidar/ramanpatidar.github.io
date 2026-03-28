@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Marketing — 7-Day Mastery Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #1a1a25;
+    --border: #2a2a3a;
+    --accent: #f5c842;
+    --accent2: #e8853d;
+    --accent3: #5b8cf5;
+    --green: #4ecb71;
+    --red: #e85d5d;
+    --purple: #a855f7;
+    --text: #e8e8f0;
+    --muted: #7070a0;
+    --easy: #4ecb71;
+    --medium: #f5c842;
+    --hard: #e85d5d;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: 'DM';
+    position: absolute;
+    right: -20px;
+    top: -30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(245, 200, 66, 0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,200,66,0.1);
+    border: 1px solid rgba(245,200,66,0.3);
+    color: var(--accent);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #fff;
+  }
+
+  .header h1 span { color: var(--accent); font-style: italic; }
+
+  .header-sub {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .meta-pill .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* LAYOUT */
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 200px);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    padding: 30px 0;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .sidebar-section {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    padding: 0 4px;
+  }
+
+  .day-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-bottom: 4px;
+  }
+
+  .day-btn:hover { background: var(--surface2); color: var(--text); }
+  .day-btn.active {
+    background: rgba(245,200,66,0.1);
+    border-color: rgba(245,200,66,0.3);
+    color: var(--accent);
+  }
+
+  .day-btn .num {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s;
+  }
+
+  .day-btn.active .num {
+    background: var(--accent);
+    color: #000;
+  }
+
+  .day-btn .day-title { flex: 1; line-height: 1.3; }
+  .day-btn .day-title small { display: block; font-size: 11px; opacity: 0.6; font-weight: 400; margin-top: 1px; }
+
+  /* RESOURCE SIDEBAR */
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-bottom: 3px;
+  }
+  .resource-link:hover { background: var(--surface2); color: var(--text); }
+  .resource-link .ch-icon {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  /* MAIN */
+  .main {
+    padding: 40px;
+    overflow-y: auto;
+  }
+
+  /* DAY PANEL */
+  .day-panel { display: none; animation: fadeIn 0.3s ease; }
+  .day-panel.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .day-title-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .day-title-block .day-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  .day-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-align: center;
+  }
+
+  .stat-box .val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .stat-box .lbl {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* POMODORO SCHEDULE */
+  .pomodoro-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 30px;
+  }
+
+  .pomodoro-bar h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pomodoro-bar h3::before {
+    content: '🍅';
+    font-size: 16px;
+  }
+
+  .pomo-blocks {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .pomo-block {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+  }
+
+  .pomo-block.work { border-left: 3px solid var(--accent); }
+  .pomo-block.short-break { border-left: 3px solid var(--accent3); }
+  .pomo-block.long-break { border-left: 3px solid var(--green); }
+  .pomo-block.study-end { border-left: 3px solid var(--red); }
+
+  .pomo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+
+  .pomo-block.work .pomo-dot { background: var(--accent); }
+  .pomo-block.short-break .pomo-dot { background: var(--accent3); }
+  .pomo-block.long-break .pomo-dot { background: var(--green); }
+  .pomo-block.study-end .pomo-dot { background: var(--red); }
+
+  .pomo-arrow {
+    color: var(--border);
+    font-size: 16px;
+  }
+
+  /* CONCEPT CARDS */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    margin-top: 30px;
+  }
+
+  .difficulty-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .badge-easy { background: rgba(78,203,113,0.15); color: var(--easy); border: 1px solid rgba(78,203,113,0.3); }
+  .badge-medium { background: rgba(245,200,66,0.15); color: var(--medium); border: 1px solid rgba(245,200,66,0.3); }
+  .badge-hard { background: rgba(232,93,93,0.15); color: var(--hard); border: 1px solid rgba(232,93,93,0.3); }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .concept-card:hover { border-color: rgba(245,200,66,0.3); }
+
+  .concept-header {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .concept-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .concept-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    background: var(--surface2);
+  }
+
+  .concept-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .concept-tagline {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .toggle-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .concept-card.open .toggle-icon {
+    background: rgba(245,200,66,0.15);
+    color: var(--accent);
+    transform: rotate(180deg);
+  }
+
+  .concept-body {
+    display: none;
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .concept-card.open .concept-body { display: block; }
+
+  .def-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .def-grid { grid-template-columns: 1fr; }
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .main { padding: 20px; }
+  }
+
+  .def-box {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .def-box-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .def-box-label.pro { color: var(--accent3); }
+  .def-box-label.gen { color: var(--green); }
+
+  .def-box p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .example-block {
+    margin-top: 14px;
+    background: rgba(245,200,66,0.05);
+    border: 1px solid rgba(245,200,66,0.15);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .example-block .eg-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .example-block p {
+    font-size: 13.5px;
+    color: #c8c8d8;
+    line-height: 1.65;
+  }
+
+  .practical-tip {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: rgba(91,140,245,0.08);
+    border: 1px solid rgba(91,140,245,0.2);
+    border-radius: 10px;
+    font-size: 13px;
+    color: #a0b4f8;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .practical-tip::before { content: '💡'; flex-shrink: 0; }
+
+  /* TOOLS GRID */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .tool-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .tool-card .tool-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tool-card p { color: var(--muted); line-height: 1.5; }
+
+  /* RESOURCES */
+  .resources-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 30px;
+  }
+
+  .resources-panel h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .resource-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    display: block;
+  }
+
+  .resource-card:hover {
+    border-color: rgba(245,200,66,0.3);
+    transform: translateY(-2px);
+  }
+
+  .resource-card .rc-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .rc-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .resource-card .rc-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .resource-card .rc-name small {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .resource-card .rc-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .resource-card .rc-tag {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .tag-yt { background: rgba(255,60,60,0.15); color: #ff6060; }
+  .tag-web { background: rgba(91,140,245,0.15); color: #7aa0ff; }
+  .tag-free { background: rgba(78,203,113,0.15); color: var(--green); }
+
+  /* POMODORO LEGEND */
+  .pomo-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .pomo-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* QUICK NAV */
+  .quick-nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .qn-btn {
+    padding: 6px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .qn-btn:hover { color: var(--accent); border-color: rgba(245,200,66,0.4); }
+
+  /* MOBILE NAV */
+  .mobile-nav {
+    display: none;
+    padding: 20px;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+
+  @media (max-width: 700px) {
+    .mobile-nav { display: flex; }
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  /* SCROLLBAR */
+  .main::-webkit-scrollbar { width: 4px; }
+  .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* WEEK OVERVIEW */
+  .week-overview {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 900px) {
+    .week-overview { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .wo-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .wo-card:hover { border-color: rgba(245,200,66,0.3); }
+  .wo-card .wo-day { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; font-weight: 700; }
+  .wo-card .wo-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .wo-card .wo-topic { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">📅 7-Day Plan · Pomodoro Method</div>
+  <h1>Digital Marketing<br><span>Mastery Week</span></h1>
+  <p class="header-sub">Easy → Medium → Hard progression daily. Professional + simple definitions, real Indian examples, and the best resources.</p>
+  <div class="header-meta">
+    <div class="meta-pill"><div class="dot"></div> 7 Days · 6–8 hrs/day</div>
+    <div class="meta-pill"><div class="dot" style="background:var(--accent3)"></div> 🍅 25-min Pomodoros</div>
+    <div class="meta-pill"><div class="dot" style="background:var(--green)"></div> All 6 Skill Areas Covered</div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <button class="qn-btn" onclick="showDay(1)">Day 1</button>
+  <button class="qn-btn" onclick="showDay(2)">Day 2</button>
+  <button class="qn-btn" onclick="showDay(3)">Day 3</button>
+  <button class="qn-btn" onclick="showDay(4)">Day 4</button>
+  <button class="qn-btn" onclick="showDay(5)">Day 5</button>
+  <button class="qn-btn" onclick="showDay(6)">Day 6</button>
+  <button class="qn-btn" onclick="showDay(7)">Day 7</button>
+</div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Weekly Schedule</div>
+
+      <button class="day-btn active" onclick="showDay(1)" id="btn-1">
+        <div class="num">1</div>
+        <div class="day-title">SEO Foundations<small>Mon · On-page, Off-page Basics</small></div>
+      </button>
+      <button class="day-btn" onclick="showDay(2)" id="btn-2">
+        <div class="num">2</div>
+        <div class="day-title">Technical SEO<small>Tue · Site health, Schema, Speed</small></div>
+      </button>
+      <button class="day-btn" onclick="showDay(3)" id="btn-3">
+        <div class="num">3</div>
+        <div class="day-title">SEM + Modern SEO<small>Wed · AEO, LLM SEO, AI Search</small></div>
+      </button>
+      <button class="day-btn" onclick="showDay(4)" id="btn-4">
+        <div class="num">4</div>
+        <div class="day-title">Paid Advertising<small>Thu · Google Ads + Meta Ads</small></div>
+      </button>
+      <button class="day-btn" onclick="showDay(5)" id="btn-5">
+        <div class="num">5</div>
+        <div class="day-title">Analytics & Tracking<small>Fri · GA4, GTM, A/B Testing</small></div>
+      </button>
+      <button class="day-btn" onclick="showDay(6)" id="btn-6">
+        <div class="num">6</div>
+        <div class="day-title">Tools + Strategy<small>Sat · Ahrefs, SEMrush, B2B, Email</small></div>
+      </button>
+      <button class="day-btn" onclick="showDay(7)" id="btn-7">
+        <div class="num">7</div>
+        <div class="day-title">Revision + Projects<small>Sun · Mock tasks, Interview prep</small></div>
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">🎥 YouTube Channels</div>
+      <a class="resource-link" href="#">
+        <div class="ch-icon" style="background:rgba(255,60,60,0.15);color:#ff6060;">W</div>
+        WsCube Tech
+      </a>
+      <a class="resource-link" href="#">
+        <div class="ch-icon" style="background:rgba(245,200,66,0.15);color:var(--accent);">DD</div>
+        Digital Deepak
+      </a>
+      <a class="resource-link" href="#">
+        <div class="ch-icon" style="background:rgba(78,203,113,0.15);color:var(--green);">LS</div>
+        Learn With Shoaib
+      </a>
+      <a class="resource-link" href="#">
+        <div class="ch-icon" style="background:rgba(91,140,245,0.15);color:var(--accent3);">MF</div>
+        Marketing Fundas
+      </a>
+      <a class="resource-link" href="#">
+        <div class="ch-icon" style="background:rgba(168,85,247,0.15);color:var(--purple);">PK</div>
+        Pradeep Chopra
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">🔑 Key</div>
+      <div class="pomo-legend">
+        <div class="pomo-legend-item"><div class="legend-dot" style="background:var(--accent)"></div> 25min Work</div>
+        <div class="pomo-legend-item"><div class="legend-dot" style="background:var(--accent3)"></div> 5min Break</div>
+        <div class="pomo-legend-item"><div class="legend-dot" style="background:var(--green)"></div> 30min Long Break</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <!-- ==================== DAY 1 ==================== -->
+    <div class="day-panel active" id="day-1">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 1 — SEO Foundations</h2>
+          <p class="day-sub">Monday · On-Page, Off-Page, Keyword Research · Easy → Medium → Hard</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">8</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">6h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">5</div><div class="lbl">Concepts</div></div>
+        </div>
+      </div>
+
+      <!-- Pomodoro Schedule -->
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1 On-Page SEO Basics (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #2 Keyword Research (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3 Title, Meta, Headings (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #4 URL & Internal Linking (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5 Off-Page SEO (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #6 Backlink Strategies (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #7 Domain Authority (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #8 Practice + Notes (25m)</div>
+        </div>
+      </div>
+
+      <!-- EASY SECTION -->
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Easy</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#2 · ~1h</div>
+      </div>
+
+      <!-- On-Page SEO -->
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📄</div>
+            <div>
+              <div class="concept-name">On-Page SEO</div>
+              <div class="concept-tagline">Optimizing what's on your own website</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>On-Page SEO refers to the systematic optimization of individual web page elements — including title tags, meta descriptions, header hierarchy, keyword placement, internal linking, and content quality — to improve organic search engine rankings and user relevance signals.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language (Yaad rakhne ke liye)</div>
+              <p>On-Page SEO matlab apni website ke ander jo kuch bhi hai — title, headings, content, images — usko Google-friendly banana taaki Google aapki page ko upar dikhaye. Jaise apni dukaan ki signboard aur shelves sahi arrange karna.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Indian Example</div>
+            <p>Socho ek Bhopal-based homemade pickle brand hai — "Madhya Pradesh Achaar". Agar unka page title hai "Achaar — Home" instead of "Best Homemade Mango Pickle in Bhopal | MP Achaar", toh Google ko pata hi nahi chalega ye page kiske liye hai. On-Page SEO mein hum title, headings (H1, H2), image alt text, aur content mein "mango pickle Bhopal" jaisi keywords add karte hain. Isse Google samajhta hai ki yeh page relevant hai.</p>
+          </div>
+          <div class="practical-tip">Key elements: Title Tag (50–60 chars), Meta Description (150–160 chars), H1 tag (ek hi hona chahiye), H2/H3 headings, keyword density ~1–2%, internal links, image alt text, page URL structure.</div>
+        </div>
+      </div>
+
+      <!-- Keyword Research -->
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🔍</div>
+            <div>
+              <div class="concept-name">Keyword Research</div>
+              <div class="concept-tagline">Finding what your audience actually searches for</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Keyword research is the analytical process of identifying and evaluating search queries that users enter into search engines, assessing metrics such as search volume, keyword difficulty (KD), CPC, and search intent to prioritize content and optimization efforts that align with business goals.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Keyword research matlab yeh pata karna ki log Google pe kya type karte hain taaki tum wahi word apni website mein use karo. Jaise tum ek chai ki dukaan kholne se pehle puchho ki log "best chai near me" search karte hain ya "masala chai Bhopal" — phir usi naam se apni dukaan Google pe list karo.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek student jo Fiverr pe SEO services dena chahta hai — woh Google Keyword Planner ya Ubersuggest mein type karta hai "SEO services" aur paata hai ki "affordable SEO services for small business" — 2,400 monthly searches, low competition. Ab woh apni Fiverr gig aur portfolio page mein yahi phrase use karta hai. Yahi keyword research hai — sahi mein likhna jo log dhundhte hain.</p>
+          </div>
+          <div class="practical-tip">Free tools: Google Keyword Planner, Ubersuggest, Google Search (auto-suggest + "People also ask"). Types: Short-tail (1–2 words, high volume, high competition) vs Long-tail (3+ words, low volume, easy to rank).</div>
+        </div>
+      </div>
+
+      <!-- MEDIUM SECTION -->
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Medium</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #3–#5 · ~1h45m</div>
+      </div>
+
+      <!-- Meta Tags & Content Structure -->
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🏷️</div>
+            <div>
+              <div class="concept-name">Title Tags, Meta Descriptions & Content Structure</div>
+              <div class="concept-tagline">The HTML code that tells Google what your page is about</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Title tags are HTML elements (<code>&lt;title&gt;</code>) that define a web page's title in SERPs and browser tabs, directly influencing click-through rates (CTR) and relevancy signals. Meta descriptions, while not a direct ranking factor, impact CTR by summarizing page content in SERPs (150–160 characters recommended).</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Jab tum Google pe search karte ho, jo blue clickable line aati hai — woh Title Tag hai. Uske neeche jo chhoti si description hoti hai — woh Meta Description hai. Ye dono cheezein Google pe dikhti hain aur decide karti hain ki log tere link pe click karenge ya nahi. Sochko ye teri book ka title aur back cover summary hai.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p><strong>Bad Title:</strong> "Home | MyWebsite" — Google ko kuch pata nahi chala.<br><strong>Good Title:</strong> "Best Homemade Mango Pickle in Bhopal | Free Delivery | MP Achaar" — keyword hai, USP hai, location hai.<br><strong>Good Meta:</strong> "Order authentic Madhya Pradesh-style mango pickle online. Made fresh, no preservatives. Free delivery in Bhopal. Order now!" — action hai, benefit hai, 155 characters.</p>
+          </div>
+          <div class="practical-tip">H1 ek page pe ek hi honi chahiye (main topic). H2 subtopics ke liye, H3 sub-subtopics ke liye. Yeh heading hierarchy Google ko page structure samajhne mein help karta hai.</div>
+        </div>
+      </div>
+
+      <!-- HARD SECTION -->
+      <div class="section-label">
+        <div class="difficulty-badge badge-hard">Hard</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #6–#8 · ~1h30m</div>
+      </div>
+
+      <!-- Off-Page SEO & Backlinks -->
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🔗</div>
+            <div>
+              <div class="concept-name">Off-Page SEO & Backlink Building</div>
+              <div class="concept-tagline">Building your website's authority through external signals</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Off-Page SEO encompasses all optimization activities conducted outside the website's own pages — primarily link building (acquiring inbound links from authoritative domains), social signals, brand mentions, and digital PR — to improve the site's domain authority (DA), trustworthiness, and organic ranking potential in SERPs.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Off-Page SEO matlab woh cheezein jo tumhari website ke BAHAR hoti hain lekin tumhari ranking affect karti hain. Sabse important hai backlinks — yaani doosri websites ka tumhari site ke liye link dena. Socho yeh word-of-mouth ki tarah hai online. Agar TOI ya Hindustan Times tumhare achaar brand ka zikr kare aur link de, toh Google samjhega — "yeh toh famous brand hai!"</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek food blogger — "Delhi Foodie Reviews" — ne "MP Achaar" ke pickle ka review post kiya aur link diya. Yeh ek <strong>backlink</strong> hai. Ab Google sochta hai ki agar trusted food sites is brand ko refer kar rahi hain, toh yeh site important hogi. Backlink building strategies: Guest Blogging (doosri site pe article likhna + apna link dena), Broken Link Building, Resource Page Outreach, PR outreach to news sites.</p>
+          </div>
+          <div class="practical-tip">Domain Authority (DA) — Moz ka metric, 1–100. Zyada DA wali site se backlink = zyada value. Quality > Quantity. 10 high-DA backlinks >>> 1000 spam links. Spam links se Google penalty bhi ho sakti hai (Google Penguin update).</div>
+        </div>
+      </div>
+
+      <!-- Domain Authority -->
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">⭐</div>
+            <div>
+              <div class="concept-name">Domain Authority & Page Authority</div>
+              <div class="concept-tagline">Measuring how much Google trusts your website</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Domain Authority (DA) is a proprietary search engine ranking score developed by Moz, ranging from 1 to 100, that predicts the likelihood of a domain ranking well in SERPs based on the quantity and quality of its inbound link profile. Page Authority (PA) applies the same metric to individual pages rather than the entire domain.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>DA ek score hai 1 se 100 tak jo batata hai ki Google aapki website ko kitna trust karta hai. Naya website = DA 1, Google.com = DA 100. Agar tumhara DA 30 hai aur competitor ka 60, toh woh tum se zyada easily rank karega. Socho yeh 10th mein percentage jaisi cheez hai — zyada, utna better.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Tumhara ek naya freelance SEO portfolio website hai — DA 5. Toh initially Google pe rank karna mushkil hoga. Solution: Quora pe answers likho aur apna portfolio link add karo, LinkedIn articles likhke blog link karo, guest post karo medium.com pe. Dheere dheere DA badhega aur ranking bhi improve hogi.</p>
+          </div>
+          <div class="practical-tip">Check DA free mein: MozBar Chrome extension, Moz Link Explorer (free version). DA 40+ = decent authority. DA 60+ = strong. Focus: Earn backlinks from high-DA sites in your niche.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 2 ==================== -->
+    <div class="day-panel" id="day-2">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 2 — Technical SEO</h2>
+          <p class="day-sub">Tuesday · Site Speed, Core Web Vitals, Schema, Crawlability · Easy → Hard</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">8</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">6h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">5</div><div class="lbl">Concepts</div></div>
+        </div>
+      </div>
+
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1–2 Crawling & Indexing (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (2×5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3–4 Site Speed + CWV (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5–6 Schema Markup (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (2×5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #7–8 Robots.txt, Sitemap, Audit (50m)</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Easy</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#2 · ~1h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🕷️</div>
+            <div>
+              <div class="concept-name">Crawling & Indexing</div>
+              <div class="concept-tagline">How Google discovers and stores your website</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Crawling is the process by which search engine bots (Googlebot) systematically discover and fetch web pages by following hyperlinks. Indexing is the subsequent process of analyzing, categorizing, and storing fetched page data in the search engine's database, making it eligible to appear in SERPs for relevant queries.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Google ka ek robot hai (Googlebot) jo internet pe ghoomta rehta hai aur websites ko padhta rehta hai — ise Crawling kehte hain. Jab woh tumhari website padh leta hai aur apni list mein add kar leta hai — ise Indexing kehte hain. Agar index nahi hua, toh Google pe dikhega hi nahi.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Tumne naya blog post publish kiya — "Best SEO Tips for Small Businesses India 2025". Agar Google ne abhi crawl nahi kiya, toh woh search result mein nahi aayega. Quick fix: Google Search Console mein jao → URL Inspection → "Request Indexing". Yeh Google ko bolta hai "bhai, naya content hai, aa ke dekh."</p>
+          </div>
+          <div class="practical-tip">Check karo ki koi page indexed hai ya nahi: Google mein type karo "site:yourdomain.com/page-url". Agar result aaya = indexed. Nahi aaya = not indexed, investigate karo kyun.</div>
+        </div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🗺️</div>
+            <div>
+              <div class="concept-name">XML Sitemap & Robots.txt</div>
+              <div class="concept-tagline">Guiding Google bots on what to crawl</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>An XML Sitemap is a structured file listing all important URLs on a website, enabling search engines to discover and prioritize crawling of pages efficiently. The Robots.txt file is a plain-text protocol (Robots Exclusion Standard) that instructs crawlers which directories or pages they are permitted or prohibited from accessing.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p><strong>Sitemap</strong> = Tumhari website ka table of contents, jo Google ko dete ho taaki woh jaan sake ki kitne pages hain aur kahan hain. <strong>Robots.txt</strong> = Google ko bolta hai "yahan mat aana" (jaise admin pages, login pages). Dono milke Google ko sahi guide karte hain ki kya crawl karna hai, kya nahi.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek ecommerce site "ShopBhopal.com" ke 500 product pages hain. Agar sitemap nahi hai, Googlebot ko manually dhundhna padega — time waste. Sitemap submit karne ke baad Googlebot seedha 500 pages ko quickly crawl kar sakta hai. Robots.txt mein likhte hain: "Disallow: /admin/" taaki Google admin dashboard ko ignore kare.</p>
+          </div>
+          <div class="practical-tip">Sitemap check karo: yourdomain.com/sitemap.xml. Robots.txt check: yourdomain.com/robots.txt. WordPress users: Yoast SEO plugin automatically sitemap generate karta hai.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Medium</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #3–#5 · ~1h45m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">⚡</div>
+            <div>
+              <div class="concept-name">Core Web Vitals & Site Speed</div>
+              <div class="concept-tagline">Google's user experience metrics — now ranking factors</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Core Web Vitals (CWV) are a set of standardized metrics by Google — Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS) — that measure real-world user experience in terms of loading performance, interactivity, and visual stability, and are incorporated as ranking signals in Google's Page Experience algorithm.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Google check karta hai ki teri website kitni fast aur smooth hai user ke liye. Teen cheezein: <strong>LCP</strong> — main content kitna jaldi load hua? <strong>INP</strong> — button click karne pe kuch hua ya page froze? <strong>CLS</strong> — page load hote hue content upar-neeche hua kya (shift)? Agar yeh sab slow/bad hai, Google teri ranking gira dega.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Tum Flipkart pe phone order karne gaye. Page 8 seconds mein khula (bad LCP). Phir "Add to Cart" click kiya lekin kuch nahi hua 3 seconds tak (bad INP). Phir page pe images jump karne lage (bad CLS). Tum frustrated hokar Amazon pe chale gaye. Google bhi aisa hi sochta hai — kharab experience = ranking down.<br><br><strong>Good scores:</strong> LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1</p>
+          </div>
+          <div class="practical-tip">Check karo free mein: PageSpeed Insights (pagespeed.web.dev) — apna URL daalo, instantly score milega with improvement tips. Also check Google Search Console → Core Web Vitals report.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-hard">Hard</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #6–#8 · ~1h30m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📋</div>
+            <div>
+              <div class="concept-name">Schema Markup & Structured Data</div>
+              <div class="concept-tagline">Speaking Google's language for rich results</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Schema Markup (Structured Data) is a semantic vocabulary of tags added to HTML using JSON-LD, Microdata, or RDFa formats, following Schema.org standards, that enables search engines to understand the contextual meaning of page content and display enriched SERP features such as Knowledge Panels, FAQ accordions, star ratings, breadcrumbs, and recipe cards.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Schema ek special code hai jo Google ko zyada clearly explain karta hai ki teri website pe kya hai. Iske baad Google tumhare result ko "rich snippet" ke saath dikhata hai — jaise star ratings, FAQ section, price, availability directly search results mein. Isse CTR (click rate) dramatically badhti hai.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek Bhopal restaurant "Poha Palace" apni website pe Restaurant Schema add karta hai. Ab Google Maps aur Search mein dikhega: ⭐4.5 | ₹200 for two | Open now | Vegetarian. Without schema: sirf plain blue link. With schema: full rich result with ratings and timings. Customer directly click karta hai kyunki zyada info milti hai.</p>
+          </div>
+          <div class="practical-tip">Schema types important for digital marketers: Article, Product, FAQPage, LocalBusiness, Review, BreadcrumbList. Test karo free mein: Google's Rich Results Test (search.google.com/test/rich-results). JSON-LD format use karo — Google recommended.</div>
+        </div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🔍</div>
+            <div>
+              <div class="concept-name">Technical SEO Audit</div>
+              <div class="concept-tagline">Finding and fixing hidden website issues</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>A Technical SEO Audit is a comprehensive diagnostic analysis of a website's technical infrastructure to identify impediments to crawling, indexing, or ranking — covering areas such as duplicate content, canonical tag implementation, redirect chains, broken links (404 errors), page depth, HTTPS security, mobile responsiveness, and structured data validity.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Technical SEO Audit matlab apni website ki complete health checkup karna — jaise doctor body checkup karta hai. Dekho: koi broken link toh nahi? Koi page 404 error de raha? Site HTTPS pe hai ya HTTP? Mobile pe sahi dikh rahi hai? Yeh sab cheezein Google ranking affect karti hain.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek client ki website audit ki toh pata chala: 200+ broken links (404 error), 50 pages duplicate content, site HTTP pe hai HTTPS nahi, mobile pe text overlap ho rahi thi. In issues ko fix karte hi 3 months mein organic traffic 40% badhgaya. Audit ke bina yeh problems kabhi pata hi nahi chalti.</p>
+          </div>
+          <div class="practical-tip">Free audit tools: Google Search Console (Coverage report), Screaming Frog SEO Spider (free upto 500 URLs), Ahrefs Webmaster Tools (free version). Audit checklist: Broken links, Redirect chains, Duplicate content (canonical tags), Missing meta tags, Image alt text, HTTPS.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 3 ==================== -->
+    <div class="day-panel" id="day-3">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 3 — SEM + Modern SEO</h2>
+          <p class="day-sub">Wednesday · SEM, AEO, LLM SEO, AI-driven Search · Easy → Hard</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">8</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">6h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">5</div><div class="lbl">Concepts</div></div>
+        </div>
+      </div>
+
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1–2 SEM Basics + PPC (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (2×5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3–4 Quality Score + Ad Rank (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5–6 AEO + Featured Snippets (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (2×5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #7–8 LLM SEO + AI Search (50m)</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Easy</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#2 · ~1h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">💰</div>
+            <div>
+              <div class="concept-name">SEM & PPC — Search Engine Marketing</div>
+              <div class="concept-tagline">Paying to appear at the top of Google instantly</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Search Engine Marketing (SEM) is a paid digital advertising strategy that involves bidding on keywords to display ads in search engine results pages (SERPs). Pay-Per-Click (PPC) is the dominant SEM model wherein advertisers incur a cost only when a user clicks their ad, with auction-based pricing determining ad placement through the Ad Rank algorithm.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>SEM matlab Google ko paise deke apna ad search results ke upar dikhana. PPC (Pay Per Click) mein tum tab hi pay karte ho jab koi tumhara ad click kare. Organic SEO free hai but time lagta hai (3–6 months). SEM paid hai lekin instant results deta hai. Sochko SEO = gym karna, SEM = personal trainer hire karna.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Diwali ke 2 weeks pehle ek Bhopal mithai shop Google pe "best mithai shop Bhopal" search karne wale logon ko target karna chahti hai. Organic SEO se rank karne ka time nahi hai. Solution: Google Ads run karo — ₹5,000 ka budget, "mithai Bhopal", "best sweets near me" pe bid karo. Top pe "Ad" label ke saath dikhoge, leads aayenge, Diwali ke baad band karo. SEM perfectly seasonal/urgent situations ke liye hai.</p>
+          </div>
+          <div class="practical-tip">Key terms: CPM (Cost Per Mille = 1000 impressions), CPC (Cost Per Click), CTR (Click Through Rate = clicks/impressions × 100), Conversion Rate (kitne log click karke kuch buy/sign up kiye). SEO vs SEM: SEO = free, slow, long-term. SEM = paid, fast, stops when money stops.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Medium</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #3–#5 · ~1h45m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🏆</div>
+            <div>
+              <div class="concept-name">Quality Score & Ad Rank</div>
+              <div class="concept-tagline">Why cheaper bids sometimes win over expensive ones</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Quality Score is Google Ads' internal metric (1–10) evaluating the relevance and quality of keywords, ads, and landing pages relative to user intent. Ad Rank, the metric determining ad position in SERPs, is calculated as: Ad Rank = Max Bid × Quality Score × Expected Impact of Extensions, meaning higher Quality Scores can achieve better positioning at lower CPCs.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Google sirf paise se ad position decide nahi karta. Quality Score (1–10) decide karta hai ki tumhara ad kitna relevant aur helpful hai user ke liye. Agar Quality Score high hai, toh tumhara ad kam paise mein bhi upar aa sakta hai competitor se. Socho exams mein — zyada padhne wala student, zyada fees nahi deta, lekin zyada marks laata hai!</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Competitor A: ₹50/click bid + Quality Score 4 = Ad Rank 200. Tum: ₹30/click bid + Quality Score 8 = Ad Rank 240. Tum upar aa gaye, LESS money mein! Quality Score improve karne ke liye: keyword, ad copy, aur landing page teeno ka relevancy match karo. Agar keyword "running shoes" hai, ad bhi "running shoes" ke baare mein ho, aur landing page pe bhi running shoes hi hon — not all shoes.</p>
+          </div>
+          <div class="practical-tip">Quality Score 3 components: Expected CTR (1/3), Ad Relevance (1/3), Landing Page Experience (1/3). Google Ads dashboard mein "Quality Score" column enable karke dekho apni keywords ka score. Target: 7+ score for each keyword.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-hard">Hard</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #6–#8 · ~1h30m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🤖</div>
+            <div>
+              <div class="concept-name">AEO — Answer Engine Optimization</div>
+              <div class="concept-tagline">Optimizing for AI assistants and featured snippets</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Answer Engine Optimization (AEO) is the strategic process of structuring and formatting web content to maximize the likelihood of being surfaced as a direct answer by search engines (Featured Snippets, People Also Ask), voice assistants (Alexa, Google Assistant, Siri), and AI-powered answer engines (Perplexity AI, Google AI Overview), by emphasizing question-format content, concise definitions, structured data, and authoritative sourcing.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Pehle log Google pe link dhundhte the aur click karte the. Ab ChatGPT, Perplexity, aur Google AI Overview directly answer de deta hai — link click ki zarurat nahi. AEO matlab apna content is tarah likhna ki AI aur Google seedha tumhara content use karke answer de. Isse tumhara brand "credible source" ban jaata hai.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Koi Google pe poochhe: "What is domain authority?" Google AI Overview mein seedha ek paragraph aata hai — agar woh paragraph tumhari website se aaya toh tumhe zero-click visibility milti hai (log link click nahi karte, lekin brand name dekhte hain). AEO ke liye: Har H2 ek question banao ("What is X?"), pehle paragraph mein seedha 2-line answer do, FAQ schema add karo, aur concise definitions likhle.</p>
+          </div>
+          <div class="practical-tip">AEO tactics: "What is X", "How to X", "Why is X" format mein content structure karo. Answer 40–60 words mein dena best hai (Featured Snippet sweet spot). FAQ Page schema, HowTo schema use karo. Target "People Also Ask" boxes.</div>
+        </div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🧠</div>
+            <div>
+              <div class="concept-name">LLM SEO — Optimizing for AI Models</div>
+              <div class="concept-tagline">The newest frontier: getting cited by ChatGPT & Claude</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>LLM SEO (also called GEO — Generative Engine Optimization) is the emerging practice of optimizing content to improve the probability of being cited or referenced by Large Language Models (such as ChatGPT, Claude, Gemini, and Perplexity), through strategies including establishing topical authority, maintaining content freshness, leveraging structured data, generating authoritative backlinks, and creating comprehensive, factually accurate content that AI models recognize as high-quality source material.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Ab log Google se pehle ChatGPT ya Perplexity se puchh rahe hain. LLM SEO matlab apna content is tarah likhna ki ChatGPT ya Gemini jab koi question ka answer de, toh woh tumhare content ko source maane aur cite kare. Yeh bahut naya concept hai, lekin future mein yahi sabse important hoga — kyunki AI search ka future hai.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek company "DigiGrow India" agar ChatGPT se koi pooche "best digital marketing agency in India for startups" — toh DigiGrow cite ho. Iske liye DigiGrow ne kiya: detailed blog posts likhe "How Indian Startups Can Use SEO", Clutch/G2 pe reviews liye, Wikipedia-style factual content publish kiya, aur top DA sites se backlinks banaye. LLM inhi sources pe rely karta hai jo trusted aur comprehensive hain.</p>
+          </div>
+          <div class="practical-tip">LLM SEO strategies: Topical Authority banao (ek niche pe comprehensively likho), Wikipedia/Wikidata pe presence, authoritative backlinks, accurate factual content, brand mentions (even without links), structured Q&A content, consistent NAP (Name, Address, Phone) for local.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 4 ==================== -->
+    <div class="day-panel" id="day-4">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 4 — Paid Advertising</h2>
+          <p class="day-sub">Thursday · Google Ads + Meta Ads Manager · Easy → Hard</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">8</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">6h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">5</div><div class="lbl">Concepts</div></div>
+        </div>
+      </div>
+
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1–2 Google Ads Structure (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (10m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3–4 Match Types + Bidding (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5–6 Meta Ads Manager (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (10m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #7–8 Targeting, Retargeting, ROAS (50m)</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Easy</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#2 · ~1h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📢</div>
+            <div>
+              <div class="concept-name">Google Ads Campaign Structure</div>
+              <div class="concept-tagline">Account → Campaign → Ad Group → Ad → Keyword</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Google Ads operates on a hierarchical structure: Account (billing & settings) → Campaigns (budget, bid strategy, targeting) → Ad Groups (themed sets of ads & keywords sharing relevance) → Ads (creative copy shown to users) → Keywords (search queries triggering ad display). Proper campaign architecture ensures relevance, efficient budget allocation, and Quality Score optimization.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Google Ads ek company ki tarah kaam karta hai: <strong>Account</strong> = company. <strong>Campaign</strong> = department (Sales, HR). <strong>Ad Group</strong> = team within department. <strong>Ad</strong> = team ka kaam. <strong>Keywords</strong> = kab yeh team saamne aaye. Ek campaign ka ek goal hota hai (e.g., "Summer Sale"), aur usmein related ad groups hoti hain.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p><strong>Account:</strong> ShopBhopal Google Ads Account<br><strong>Campaign:</strong> "Diwali Sale 2025" (Budget: ₹10,000/day)<br><strong>Ad Group 1:</strong> Mithai (Keywords: buy mithai online, best mithai Bhopal)<br><strong>Ad Group 2:</strong> Dry Fruits (Keywords: buy dry fruits, kaju katli online)<br><strong>Ad:</strong> "Get Fresh Diwali Mithai | Order Now | Free Delivery in Bhopal"<br>Yeh structure rakhne se relevant ads relevant keywords pe chalti hain = better Quality Score.</p>
+          </div>
+          <div class="practical-tip">Campaign types: Search (text ads in results), Display (banner ads on websites), Shopping (product images), Video (YouTube), Performance Max (AI-driven, all placements). Beginners ke liye: Search campaigns se start karo — most intent-driven, best ROI.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Medium</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #3–#5 · ~1h45m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🎯</div>
+            <div>
+              <div class="concept-name">Keyword Match Types & Negative Keywords</div>
+              <div class="concept-tagline">Controlling exactly who sees your Google Ads</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Keyword Match Types in Google Ads govern the degree of semantic similarity required between a user's search query and the advertiser's keyword to trigger ad display: Broad Match (widest reach, includes synonyms/related searches), Phrase Match (query must contain keyword phrase in order), Exact Match (query must precisely match keyword). Negative Keywords exclude irrelevant queries, improving CTR and reducing wasted ad spend.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p><strong>Broad Match</strong> = "mithai" — Google bahut sare searches pe dikhayega (jaise "cake" bhi). <strong>Phrase Match</strong> = "buy mithai online" — yeh phrase andar hona chahiye. <strong>Exact Match</strong> = [buy mithai online Bhopal] — bilkul yahi type karna chahiye. <strong>Negative Keywords</strong> = wo searches jisme tum NAHI dikhna chahte (jaise -"free mithai", -"mithai recipe").</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek paid ad chal raha tha "running shoes" pe (Broad Match). Lekin ad tab bhi show ho rahi thi jab log "running free" ya "running shoes DIY" search karte the — woh click karte, paise kat jaate, kuch buy nahi karte. Fix: Negative keywords add karo — "free", "DIY", "how to make". Ab sirf genuine buyers dikhenge, budget waste band hua, ROAS improve hua.</p>
+          </div>
+          <div class="practical-tip">Start with Phrase Match + Exact Match — safer. Broad Match sirf tab use karo jab kafi data ho. Weekly Search Terms Report check karo Google Ads mein — usme dekho kaunsi queries pe ad trigger hua, irrelevant wali ko Negative mein add karo.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-hard">Hard</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #6–#8 · ~1h30m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📱</div>
+            <div>
+              <div class="concept-name">Meta Ads Manager — Facebook & Instagram Ads</div>
+              <div class="concept-tagline">Intent-based vs Interest-based advertising</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Meta Ads Manager is a comprehensive advertising platform enabling advertisers to create, manage, and optimize paid campaigns across Facebook, Instagram, Messenger, and Audience Network. Unlike search-based SEM (intent targeting), Meta Ads leverages interest-based, behavioral, demographic, and lookalike audience targeting using Meta's first-party user data, optimized via campaign objectives such as Awareness, Traffic, Engagement, Leads, App Promotion, and Sales.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Google Ads mein log khud kuch search karte hain, phir ad dikhta hai. Meta Ads (Facebook/Instagram) mein tum apne customers choose karte ho — unki age, interest, location, behavior ke basis pe. Jaise agar tum gym supplements becho, toh Meta pe un logon ko target karo jo "fitness", "gym", "bodybuilding" mein interested hain, bina unke search kiye.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek Bhopal-based online bakery Instagram pe ad chala rahi hai "Custom Birthday Cakes". Meta Ads settings: <strong>Age:</strong> 20–45, <strong>Location:</strong> Bhopal + 20km, <strong>Interest:</strong> Birthday, Party Planning, Celebrations, Weddings. <strong>Behavior:</strong> Online shoppers. Ad type: Reel with beautiful cake visuals + "Order now" button. Result: ₹500 spend mein 15 inquiries. Google Ads pe same result ke liye ₹2000 lagte — kyunki Meta pe competition kam hai, visual impact zyada.</p>
+          </div>
+          <div class="practical-tip">Meta Ads Funnel: TOFU (Top — Awareness: Video/Reel) → MOFU (Middle — Consideration: Engagement, Lead forms) → BOFU (Bottom — Conversion: Retargeting people who visited your website). Pixel install karo website pe — Meta Pixel track karta hai website visitors ko aur retarget karta hai.</div>
+        </div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📊</div>
+            <div>
+              <div class="concept-name">ROAS, CPA & Retargeting</div>
+              <div class="concept-tagline">Measuring ad performance and winning back visitors</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>ROAS (Return on Ad Spend) is calculated as Total Revenue Generated / Total Ad Spend, indicating revenue earned per unit of advertising investment. CPA (Cost Per Acquisition/Action) measures the average cost incurred to acquire one converting customer. Retargeting (Remarketing) is a targeting strategy that serves ads specifically to users who have previously interacted with a brand's digital touchpoints (website visit, cart abandonment, app engagement), leveraging cookie/pixel data to re-engage high-intent prospects.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p><strong>ROAS</strong> = ₹1 ad spend mein kitne rupaye income aayi. ROAS 4x = ₹1 lagao, ₹4 wapas aao. <strong>CPA</strong> = ek customer lene mein kitna ad spend hua. <strong>Retargeting</strong> = jin logon ne tumhari site visit ki lekin kuch buy nahi kiya, unhe wapas dikhao ad. Yeh sabse powerful strategy hai — kyunki yeh log already interested hain.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek online course website hai "LearnSEO.in". 1000 log aaye, 950 bina enroll kiye chale gaye. Retargeting: Facebook Pixel ne unhe capture kiya. Ab woh logon ko Facebook/Instagram pe dikhta hai: "Still thinking? 30% off ends tonight!" — yeh wale already interested the, toh conversion rate 3x zyada hota hai general audience se. ROAS = ₹20,000 revenue / ₹5,000 ad spend = 4x ROAS. ✅</p>
+          </div>
+          <div class="practical-tip">Good ROAS benchmark: eCommerce 3–5x, Services 2–4x. Install Meta Pixel (Facebook Business Manager → Events Manager). Google Ads mein remarketing ke liye: Audiences → Remarketing → "Website Visitors". Always test retargeting campaign — consistently lowest CPA hoti hai.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 5 ==================== -->
+    <div class="day-panel" id="day-5">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 5 — Analytics & Tracking</h2>
+          <p class="day-sub">Friday · GA4, Google Tag Manager, A/B Testing, Reporting · Easy → Hard</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">8</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">6h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">4</div><div class="lbl">Concepts</div></div>
+        </div>
+      </div>
+
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1–2 GA4 Interface + Reports (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (10m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3–4 GA4 Events + Conversions (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5–6 Google Tag Manager (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (10m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #7–8 A/B Testing + Reporting (50m)</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Easy</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#2 · ~1h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📈</div>
+            <div>
+              <div class="concept-name">Google Analytics 4 (GA4) — Basics</div>
+              <div class="concept-tagline">Understanding your website's traffic and user behavior</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Google Analytics 4 (GA4) is Google's next-generation, event-based web and app analytics platform that replaced Universal Analytics (UA). GA4 employs a unified data model centered on Events and Parameters (rather than sessions and pageviews), integrates machine learning for predictive insights, supports cross-device tracking via User ID and Google Signals, and offers customizable reports through the Explorations feature for comprehensive funnel, path, and cohort analysis.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>GA4 ek free tool hai jo batata hai: <strong>Kaun</strong> tumhari website pe aaya, <strong>kahan se</strong> aaya (Google, Instagram, direct), <strong>kya kiya</strong> (kaunsa page dekha, kitna time ruka), aur <strong>kya hua</strong> (form submit kiya, purchase kiya). Socho yeh teri dukaan pe CCTV camera + customer register hai ek saath.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>GA4 Realtime report dekhi aur pata chala: Abhi 42 log website pe hain. 30 Instagram se aaye, 8 Google se, 4 direct. Instagram wale sirf homepage pe hain (bounce rate high), Google wale blog posts padh rahe hain (engagement zyada). Conclusion: Instagram ads zyada engaging landing page chahti hai, blog content SEO se achi performance de raha hai. Ek screen mein itna data — yahi power hai GA4 ki.</p>
+          </div>
+          <div class="practical-tip">Key GA4 reports: Realtime, Acquisition (kahan se aaye), Engagement (kya kiya), Monetisation (revenue). Important metrics: Users, Sessions, Engagement Rate (new metric — opposite of Bounce Rate), Average Engagement Time, Events. GA4 free hai — analytics.google.com pe setup karo.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Medium</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #3–#5 · ~1h45m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🏷️</div>
+            <div>
+              <div class="concept-name">Google Tag Manager (GTM)</div>
+              <div class="concept-tagline">Managing tracking codes without touching website code</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Google Tag Manager (GTM) is a free tag management system (TMS) that enables marketers to deploy and manage JavaScript-based tracking snippets (Tags), define conditions for their execution (Triggers), and capture contextual data (Variables) — all through a web-based interface — without requiring direct code modification of the website, enabling faster iteration and reducing developer dependency for analytics and marketing tracking implementations.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>GTM ek "remote control" hai tumhari website ke tracking codes ka. Pehle agar tumhe GA4, Facebook Pixel, ya LinkedIn Insight Tag add karna tha, toh developer se baat karni padti thi — time waste. GTM ke saath, ek baar developer se GTM ka ek code add karvao, phir baaki saari tracking aap khud GTM se manage karo bina developer ke. Time aur paise dono bachte hain.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek marketing campaign run kiya, ab track karna hai: "Thank You" page kitne log reach kiye. GTM setup: <strong>Tag</strong> = GA4 Event "form_submitted". <strong>Trigger</strong> = User URL "/thank-you" pe pahuncha. <strong>Variable</strong> = Page URL. Submit ho gaya GTM se — code publish. Ab GA4 mein "form_submitted" event track hoga. Developer ki zarurat nahi padi. Ek ghante ka kaam 10 minute mein hua.</p>
+          </div>
+          <div class="practical-tip">GTM ke 3 main concepts: Tags (kya track karna hai), Triggers (kab track karna hai), Variables (kaunsi information capture karni hai). GTM Preview Mode use karo testing ke liye — publish se pehle check karo ki tag sahi fire ho raha hai. GTM free hai — tagmanager.google.com.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-hard">Hard</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #6–#8 · ~1h30m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🧪</div>
+            <div>
+              <div class="concept-name">A/B Testing & Conversion Rate Optimization (CRO)</div>
+              <div class="concept-tagline">Data-driven decisions, not gut feelings</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>A/B Testing (Split Testing) is a controlled experiment methodology wherein two variants of a digital asset (landing page, email subject line, CTA button, ad creative) — Variant A (control) and Variant B (treatment) — are simultaneously served to randomized user segments, with statistical significance determining which variant better achieves the defined conversion goal (purchase, sign-up, click-through). CRO (Conversion Rate Optimization) is the systematic process of increasing the percentage of users who complete desired actions using data analysis, user research, and A/B testing.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>A/B Testing matlab do versions banana aur dekhna kaunsa better kaam karta hai. Version A dikha aadhe logon ko, Version B dikha baaki aadhe ko — joh zyada clicks/sales laaye, wahi use karo. Sochko yeh "taste test" hai — do chai banao, logon ko pilao, pucho kaunsi acchi lagi. Math decide karta hai, andaza nahi.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Email campaign A/B test: <strong>Subject A:</strong> "Our New Course is Here!" <strong>Subject B:</strong> "⚡ 47 people joined today. Will you?" — 500 logon ko A mila, 500 ko B. Open rate: A = 18%, B = 31%. Clear winner: B. Testing sirf subject line se aaya 13% extra engagement. Aur agar 10,000 email list hai toh 1300 extra opens = significantly more revenue. Ek simple test, massive difference.</p>
+          </div>
+          <div class="practical-tip">Kya test kar sakte ho: CTA button text/color, headline, images, pricing display, form length, email subject lines. Tool: Google Optimize (discontinued, use VWO free trial ya Optimizely). Minimum sample size: 100 conversions per variant before declaring winner. Statistical significance: 95%+.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 6 ==================== -->
+    <div class="day-panel" id="day-6">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 6 — Tools + Strategy</h2>
+          <p class="day-sub">Saturday · SEO Tools, Email Marketing, B2B, HubSpot, CRM · Easy → Hard</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">8</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">6h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">5</div><div class="lbl">Concepts</div></div>
+        </div>
+      </div>
+
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1–2 Ahrefs + SEMrush Basics (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (10m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3–4 Email Marketing + Mailchimp (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5–6 HubSpot + CRM Concepts (50m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Breaks (10m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #7–8 B2B Marketing + Lead Gen (50m)</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Easy</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#2 · ~1h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🛠️</div>
+            <div>
+              <div class="concept-name">Ahrefs & SEMrush — SEO Power Tools</div>
+              <div class="concept-tagline">Competitor research and keyword intelligence at scale</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Ahrefs and SEMrush are comprehensive SEO intelligence platforms providing capabilities including backlink index analysis, keyword research & difficulty scoring, SERP position tracking, competitor gap analysis, site health auditing, and content opportunity identification. Both leverage proprietary crawl data to deliver actionable competitive insights for organic and paid search strategy formulation.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Ahrefs aur SEMrush woh superhero tools hain jo bata sakte hain: competitor ke kitne backlinks hain, woh kaunse keywords pe rank kar raha hai, uski site ka traffic kitna hai, aur tum usse kaise beat kar sakte ho. Ek hi dashboard mein competitor ki poori SEO strategy dikh jaati hai. Expensive hain (₹8k–₹20k/month) lekin paid trial/free version se sikhna start karo.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Tumhe ek client ka SEO karna hai — "Bhopal Yoga Studio". Ahrefs mein competitor domain dalo. Pata chala: competitor 45 keywords pe rank kar raha hai (yoga classes Bhopal, meditation center MP, etc.), 120 backlinks hain mainly from local directory sites aur yoga blogs. Ab tumhara plan: target same keywords + get similar backlinks. Competitor ki strategy copy karke improve karo — yeh competitive gap analysis hai.</p>
+          </div>
+          <div class="practical-tip">Free alternatives to learn on: Ubersuggest (free tier), Ahrefs Webmaster Tools (free for your own site), SEMrush free account (10 searches/day). Ahrefs ka best feature: Site Explorer + Keyword Explorer. SEMrush ka best feature: Domain vs Domain comparison.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Medium</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #3–#5 · ~1h45m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📧</div>
+            <div>
+              <div class="concept-name">Email Marketing & Marketing Automation</div>
+              <div class="concept-tagline">Nurturing leads on autopilot</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Email Marketing is the strategic use of targeted email communications to nurture prospect relationships, retain existing customers, and drive conversions through segmented, personalized campaigns. Marketing Automation refers to technology-driven workflows (sequences) that automatically send pre-defined email content triggered by user behaviors (e.g., sign-up, cart abandonment, inactivity), reducing manual effort while maintaining consistent touchpoints at scale.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Email marketing matlab logon ko emails bhejke relationship banana aur ultimately kuch sell karna. Marketing Automation matlab ek baar sequence set karo aur phir automatically emails jaati rehti hain. Socho: koi tumhari website pe form fill kare → automatically "Welcome" email jaaye → 2 din baad "How can we help?" email jaaye → 7 din baad "Special offer for you!" email jaaye. Yeh sab auto hota hai.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Ek online course "Digital Marketing Masterclass" sell karna hai. Email sequence: <strong>Day 0:</strong> "Welcome! Here's your free SEO checklist" (value do). <strong>Day 2:</strong> "How Rahul from Bhopal got 10 clients using SEO" (social proof). <strong>Day 4:</strong> "The #1 mistake Indian marketers make" (education). <strong>Day 6:</strong> "Enroll today — ₹1,500 off ends tonight" (offer). 6-email sequence, fully automated in Mailchimp. Ek baar set karo, soti raho, paise aate rahein.</p>
+          </div>
+          <div class="practical-tip">Key metrics: Open Rate (industry avg: 20–25%), Click Rate (2–5%), Unsubscribe Rate (keep below 0.5%). Tools: Mailchimp (free upto 500 contacts), Brevo (Sendinblue — free tier accha hai), HubSpot. Segmentation karo — ek hi email sabko mat bhejo. Segment by: interests, location, behavior.</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-hard">Hard</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #6–#8 · ~1h30m</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🤝</div>
+            <div>
+              <div class="concept-name">B2B Marketing & Lead Generation</div>
+              <div class="concept-tagline">Marketing to businesses, not consumers</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>B2B (Business-to-Business) Marketing involves strategically promoting products or services to other organizations rather than individual consumers, characterized by longer sales cycles, multiple decision-makers, rational/ROI-driven purchasing motivations, and emphasis on relationship development. B2B Lead Generation encompasses systematic processes — including content marketing, LinkedIn outreach, SEO for commercial intent keywords, webinars, whitepapers, and Account-Based Marketing (ABM) — to identify and attract potential business buyers into the sales funnel.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>B2B marketing matlab company ko company se sell karna (not to general public). B2C = Lay's chips ko aam aadmi ko bechna. B2B = Lay's company ko Parle ke kisi distributor ko sell karna. B2B mein decision ek baar mein nahi hota — multiple log involve hote hain, deal zyada badi hoti hai, time zyada lagta hai. LinkedIn sabse important platform hai B2B ke liye.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example</div>
+            <p>Tum ek digital marketing freelancer ho aur Bhopal ke local businesses ko SEO services dena chahte ho. B2B Lead Gen tactics: <strong>LinkedIn Outreach</strong> — "Hi Rajesh ji, I noticed your restaurant ranks on page 3 for 'best restaurant Bhopal' — I can help you get to page 1. Free audit?" <strong>Cold Email</strong> — Find businesses with poor SEO (Ahrefs se check karo) → send personalized value email. <strong>Content Marketing</strong> — "5 Ways Bhopal Businesses Can Get More Customers from Google" — blog likho, LinkedIn pe share karo, businesses khud contact karenge.</p>
+          </div>
+          <div class="practical-tip">B2B marketing funnel: Awareness (blog/LinkedIn content) → Consideration (case studies, webinars, demos) → Decision (proposal, free trial, ROI calculator). Demand Generation = pehle market ko aware karo (bina sales pitch ke). Lead Generation = directly contact info capture karo (form, email, LinkedIn).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 7 ==================== -->
+    <div class="day-panel" id="day-7">
+      <div class="day-header">
+        <div class="day-title-block">
+          <h2>Day 7 — Revision & Practice</h2>
+          <p class="day-sub">Sunday · Mock Tasks, Interview Prep, Reporting, Soft Skills</p>
+        </div>
+        <div class="day-stats">
+          <div class="stat-box"><div class="val">6</div><div class="lbl">Pomodoros</div></div>
+          <div class="stat-box"><div class="val">4.5h</div><div class="lbl">Total Time</div></div>
+          <div class="stat-box"><div class="val">Revision</div><div class="lbl">Day</div></div>
+        </div>
+      </div>
+
+      <div class="pomodoro-bar">
+        <h3>Today's Pomodoro Schedule (Lighter Day)</h3>
+        <div class="pomo-blocks">
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #1 Flashcard Revision (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #2 Mock SEO Audit Task (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #3 Create a Report Template (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block long-break"><div class="pomo-dot"></div>🌿 Long Break (30m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #4 Interview Q&A Practice (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #5 LinkedIn Profile Update (25m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block short-break"><div class="pomo-dot"></div>☕ Break (5m)</div>
+          <div class="pomo-arrow">→</div>
+          <div class="pomo-block work"><div class="pomo-dot"></div>🍅 #6 Plan Week 2 + Reflect (25m)</div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-easy">Morning Tasks</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #1–#3 · ~2h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">📊</div>
+            <div>
+              <div class="concept-name">Reporting — Data → Actionable Insights</div>
+              <div class="concept-tagline">Telling the story behind the numbers</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div class="def-grid">
+            <div class="def-box">
+              <div class="def-box-label pro">🎓 Professional Definition</div>
+              <p>Digital marketing reporting is the systematic process of aggregating, visualizing, and interpreting multi-channel performance data — from SEO (organic traffic, rankings, CTR), paid media (ROAS, CPC, conversions), email (open rates, revenue), and social — to generate actionable insights communicated to stakeholders in structured weekly or monthly reports, enabling data-driven budget allocation and strategy optimization decisions.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">💬 Simple Language</div>
+              <p>Reporting matlab numbers ko ek interesting story mein change karna jo boss/client samajh sake. Sirf data dena kaafi nahi — batao "yeh hua, iska reason yeh tha, aur aage yeh karna chahiye." Socho tum doctor ho — sirf blood test report dena kaafi nahi, patient ko samjhana bhi padta hai ki kya hua aur treatment kya hoga.</p>
+            </div>
+          </div>
+          <div class="example-block">
+            <div class="eg-label">🏪 Real-Life Example + Weekly Report Structure</div>
+            <p><strong>Week 3 Digital Marketing Report — [Client Name]</strong><br><br>📈 <strong>SEO:</strong> Organic traffic 18% up vs last week. "best mithai Bhopal" — rank #8 → #5. Action: 2 more backlinks needed.<br>💰 <strong>Google Ads:</strong> ROAS 3.2x (target was 3x ✅). CPC ₹12 (down from ₹15). Action: Increase budget by 20%.<br>📧 <strong>Email:</strong> Open rate 24% (industry avg 20% ✅). Click rate 3.1%. Action: A/B test next week's subject line.<br>🚨 <strong>Alert:</strong> Mobile site speed score dropped to 62. Priority: Fix image sizes this week.</p>
+          </div>
+          <div class="practical-tip">Report tools: Google Looker Studio (free — beautiful dashboards, connects to GA4, Google Ads, Search Console). Template banao ek baar, har week fill karo. Client ko PDF ya Looker Studio live link dedo — professional lagta hai. Report frequency: Weekly (2 pages), Monthly (5 pages with trends).</div>
+        </div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🎤</div>
+            <div>
+              <div class="concept-name">Top Interview Questions — Digital Marketing</div>
+              <div class="concept-tagline">Practice answers, not definitions alone</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div style="margin-top:16px">
+            <div class="def-box" style="margin-bottom:10px">
+              <div class="def-box-label pro">❓ Q: What is the difference between SEO and SEM?</div>
+              <p><strong>Answer:</strong> SEO (Search Engine Optimization) is the process of organically improving a website's SERP visibility through content, technical, and authority-building efforts — it's free but requires 3–6 months to show results. SEM (Search Engine Marketing) involves paid advertising (Google Ads) for immediate SERP placement, with costs incurred per click. For long-term brand building: SEO. For immediate lead generation or seasonal campaigns: SEM. Ideally both work together.</p>
+            </div>
+            <div class="def-box" style="margin-bottom:10px">
+              <div class="def-box-label pro">❓ Q: How would you improve a website's organic ranking?</div>
+              <p><strong>Answer:</strong> I'd follow a 3-step process: First, a Technical SEO Audit (fix crawl errors, site speed, HTTPS, mobile). Second, On-Page optimization (keyword research → optimize titles, meta, H1, content). Third, Off-Page authority building (guest posting, digital PR, backlink outreach). I'd track progress weekly via Google Search Console and GA4, adjusting tactics based on ranking movement data.</p>
+            </div>
+            <div class="def-box" style="margin-bottom:10px">
+              <div class="def-box-label pro">❓ Q: Walk me through a Google Ads campaign you'd set up for an e-commerce brand.</div>
+              <p><strong>Answer:</strong> I'd start with audience research and keyword intent mapping (Exact + Phrase Match). Structure: One campaign per product category, ad groups per sub-category, 3 ad variations per ad group (RSA). Set conversion tracking via GTM. Start with Manual CPC bidding → shift to Target ROAS once 30+ conversions/month. Weekly optimization: Search Terms review, Negative keywords, A/B test ad copies, pause low-performing keywords.</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label pro">❓ Q: What is AEO and why does it matter now?</div>
+              <p><strong>Answer:</strong> AEO — Answer Engine Optimization — is the practice of structuring content to be directly surfaced by AI-powered answer engines like Google AI Overview, Perplexity, and voice assistants. As zero-click searches increase (users getting answers without clicking links), traditional SEO alone isn't enough. AEO ensures brand visibility even when users don't click — by becoming the cited source. Tactics include Q&A content structure, FAQ schema, concise 40–60 word direct answers, and comprehensive topical authority.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">
+        <div class="difficulty-badge badge-medium">Afternoon</div>
+        <div class="section-line"></div>
+        <div class="section-time">Pomodoro #4–#6 · ~2h</div>
+      </div>
+
+      <div class="concept-card" onclick="toggleCard(this)">
+        <div class="concept-header">
+          <div class="concept-header-left">
+            <div class="concept-icon">🗓️</div>
+            <div>
+              <div class="concept-name">Week 2 Action Plan — Continue Learning</div>
+              <div class="concept-tagline">What to do after this week to keep growing</div>
+            </div>
+          </div>
+          <div class="toggle-icon">▼</div>
+        </div>
+        <div class="concept-body">
+          <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div class="def-box">
+              <div class="def-box-label pro">📌 Week 2 — Practice</div>
+              <p>• Do a real Technical SEO audit (apni ya kisi dost ki site pe)<br>• Ek Google Ads campaign set karo (Google provides ₹2000 credit for new accounts!)<br>• GA4 dashboard dekho aur ek report banao Looker Studio mein<br>• Ahrefs free trial pe competitor research karo<br>• LinkedIn pe digital marketing content publish karna start karo</p>
+            </div>
+            <div class="def-box">
+              <div class="def-box-label gen">🎯 Week 3–4 — Portfolio</div>
+              <p>• Fiverr gig banao: "SEO Audit & Optimization for Small Business"<br>• First client ke liye free/discounted work karo (testimonial ke liye)<br>• Certifications complete karo: Google Digital Garage (free), HubSpot Academy (free), Google Analytics Certification (free)<br>• Case study likhke LinkedIn pe publish karo<br>• Internshala pe apply karna start karo digital marketing internships ke liye</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESOURCES PANEL -->
+      <div class="resources-panel">
+        <h3>📚 Best Resources to Learn & Clear Doubts</h3>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(255,60,60,0.15);color:#ff4444;font-size:14px;">▶</div>
+              <div>
+                <div class="rc-name">WsCube Tech<small>YouTube Channel</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Best Hindi channel for SEO, Google Ads, Digital Marketing. Free full courses on YouTube. Very structured aur beginner-friendly.</p>
+            <span class="rc-tag tag-yt">YouTube</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(255,200,0,0.15);color:#ffc800;font-size:14px;">▶</div>
+              <div>
+                <div class="rc-name">Digital Deepak<small>YouTube + Blog</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Deepak Kanakaraju — India ka famous digital marketer. Strategy, mindset, aur freelancing ke baare mein excellent content. Hinglish mein.</p>
+            <span class="rc-tag tag-yt">YouTube</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(78,203,113,0.15);color:var(--green);font-size:14px;">▶</div>
+              <div>
+                <div class="rc-name">Learn With Shoaib<small>YouTube Channel</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Hinglish mein Google Ads, Meta Ads, SEO. Practical demos bahut acche hain. Real campaigns dikhata hai. Beginners ke liye perfect.</p>
+            <span class="rc-tag tag-yt">YouTube</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(91,140,245,0.15);color:var(--accent3);font-size:14px;">▶</div>
+              <div>
+                <div class="rc-name">Marketing Fundas<small>YouTube Channel</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">SEO tutorials, backlink building, keyword research Hindi mein. Detailed aur practical tutorials. Good for intermediate level.</p>
+            <span class="rc-tag tag-yt">YouTube</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(168,85,247,0.15);color:var(--purple);font-size:14px;">▶</div>
+              <div>
+                <div class="rc-name">Pradeep Chopra (DSIM)<small>YouTube Channel</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Digital marketing strategy aur B2B marketing. Experienced marketer — Indian context mein bahut relatable examples dete hain.</p>
+            <span class="rc-tag tag-yt">YouTube</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(232,133,61,0.15);color:var(--accent2);font-size:14px;">G</div>
+              <div>
+                <div class="rc-name">Google Digital Garage<small>Free Certification</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">"Fundamentals of Digital Marketing" course — Google certified, free, 26 modules. Interview mein mention karo — HR notice karta hai.</p>
+            <span class="rc-tag tag-web">Website</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(245,200,66,0.15);color:var(--accent);font-size:14px;">H</div>
+              <div>
+                <div class="rc-name">HubSpot Academy<small>Free Certifications</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Free certifications in: Inbound Marketing, Email Marketing, Content Marketing, Social Media. All free + certificates. Industry recognized.</p>
+            <span class="rc-tag tag-web">Website</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(255,60,60,0.15);color:#ff4444;font-size:14px;">A</div>
+              <div>
+                <div class="rc-name">Ahrefs Blog & YT<small>English — Advanced SEO</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Ahrefs ka YouTube channel aur blog — world's best SEO content. English mein hai lekin bahut clear aur practical. SEO seriously sikhna hai toh zaroor dekho.</p>
+            <span class="rc-tag tag-yt">YouTube</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(78,203,113,0.15);color:var(--green);font-size:14px;">S</div>
+              <div>
+                <div class="rc-name">SEMrush Academy<small>Free Courses</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Free SEO, Content Marketing, PPC courses with certificates. SEMrush tool pe practical exercises karo. Certificate add karo LinkedIn pe.</p>
+            <span class="rc-tag tag-web">Website</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(91,140,245,0.15);color:var(--accent3);font-size:14px;">N</div>
+              <div>
+                <div class="rc-name">Neil Patel Blog<small>neilpatel.com</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Free SEO + digital marketing tools (Ubersuggest) + detailed blog posts. "Neil Patel" naam hi ek brand hai digital marketing mein. Must-follow.</p>
+            <span class="rc-tag tag-web">Website</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(245,200,66,0.15);color:var(--accent);font-size:14px;">M</div>
+              <div>
+                <div class="rc-name">Moz Beginner's Guide<small>moz.com/beginners-guide-to-seo</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">The best free SEO beginner guide on the internet. 7 chapters covering everything from basics to advanced. Read this once — SEO fundamentals pakke ho jaayenge.</p>
+            <span class="rc-tag tag-web">Website</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+
+          <div class="resource-card">
+            <div class="rc-top">
+              <div class="rc-icon" style="background:rgba(168,85,247,0.15);color:var(--purple);font-size:14px;">R</div>
+              <div>
+                <div class="rc-name">Reddit r/SEO + r/PPC<small>Community Q&A</small></div>
+              </div>
+            </div>
+            <p class="rc-desc">Real-world questions aur experts ke answers. Jab bhi koi specific problem ho jisme YouTube se solution nahi mila — Reddit pe search karo. Goldmine hai.</p>
+            <span class="rc-tag tag-web">Community</span> <span class="rc-tag tag-free">Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function showDay(n) {
+    // Hide all panels
+    document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+    // Deactivate all buttons
+    document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+    // Show selected
+    document.getElementById('day-' + n).classList.add('active');
+    document.getElementById('btn-' + n).classList.add('active');
+    // Scroll to top of main
+    document.querySelector('.main').scrollTop = 0;
+  }
+
+  function toggleCard(card) {
+    const isOpen = card.classList.contains('open');
+    // Close all others in the same panel
+    const panel = card.closest('.day-panel');
+    panel.querySelectorAll('.concept-card.open').forEach(c => {
+      if (c !== card) c.classList.remove('open');
+    });
+    // Toggle clicked card
+    card.classList.toggle('open', !isOpen);
+  }
+
+  // Open first card on day load
+  document.querySelectorAll('.day-panel').forEach(panel => {
+    const firstCard = panel.querySelector('.concept-card');
+    if (firstCard) firstCard.classList.add('open');
+  });
+</script>
+</body>
+</html>
