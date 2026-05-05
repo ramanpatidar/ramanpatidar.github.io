@@ -1,162 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GrowthVerse - Leading Digital Marketing Agency. We drive digital growth through SEO, Social Media, Google Ads, and Content Marketing.">
-    <meta name="keywords" content="digital marketing, SEO, social media marketing, google ads, content marketing, web development">
-    <meta name="author" content="GrowthVerse">
-    <title>GrowthVerse - We Drive Digital Growth | Digital Marketing Agency</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raman Patidar | Digital & Performance Marketer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c14;
+      --bg2: #0d1220;
+      --bg3: #111827;
+      --accent: #4f8ef7;
+      --accent2: #00d4aa;
+      --text: #e8eaf0;
+      --muted: #7a8499;
+      --border: rgba(255,255,255,0.07);
+      --card: rgba(255,255,255,0.04);
+      --head: 'Syne', sans-serif;
+      --body: 'Outfit', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.1rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(8,12,20,0.85); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border); transition: all .3s;
+    }
+    .nav-logo { font-family: var(--head); font-weight: 800; font-size: 1.25rem; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-cta { background: var(--accent) !important; color: #fff !important; padding: .45rem 1.1rem; border-radius: 6px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #3a7aed !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 7rem 2.5rem 4rem; position: relative; overflow: hidden; }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(79,142,247,.13) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 50% at 15% 75%, rgba(0,212,170,.08) 0%, transparent 55%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .35rem 1rem; border: 1px solid rgba(79,142,247,.35); border-radius: 100px;
+      font-size: .78rem; color: var(--accent); font-weight: 600; margin-bottom: 1.5rem;
+      animation: fadeUp .6s ease both;
+    }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--accent2); border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
+
+    h1.hero-name {
+      font-family: var(--head); font-size: clamp(3.2rem,7.5vw,6.2rem); font-weight: 800;
+      line-height: 1.0; letter-spacing: -2.5px; margin-bottom: 1rem;
+      animation: fadeUp .6s .1s ease both;
+    }
+    h1.hero-name .a1 { color: var(--accent); }
+
+    .hero-sub {
+      font-size: clamp(.95rem,1.8vw,1.2rem); color: var(--muted); max-width: 580px;
+      margin-bottom: 2rem; animation: fadeUp .6s .2s ease both;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-bottom: 2.5rem; animation: fadeUp .6s .3s ease both; }
+    .htag { padding: .32rem .85rem; border: 1px solid var(--border); border-radius: 100px; font-size: .78rem; color: var(--muted); background: var(--card); }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; animation: fadeUp .6s .4s ease both; }
+    .btn-primary { background: var(--accent); color: #fff; padding: .82rem 1.9rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: .92rem; transition: .2s; display: inline-flex; align-items: center; gap: .5rem; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #3a7aed; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,142,247,.3); }
+    .btn-outline { background: transparent; color: var(--text); padding: .82rem 1.9rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: .92rem; transition: .2s; display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; animation: fadeUp .6s .5s ease both; }
+    .hs-num { font-family: var(--head); font-size: 2.3rem; font-weight: 800; line-height: 1; }
+    .hs-num span { color: var(--accent); }
+    .hs-label { font-size: .75rem; color: var(--muted); margin-top: .25rem; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+    /* SECTIONS */
+    section { padding: 6rem 2.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .s-label { font-size: .72rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
+    .s-title { font-family: var(--head); font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: .9rem; }
+    .s-desc { color: var(--muted); max-width: 540px; margin-bottom: 3rem; font-size: 1rem; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ABOUT */
+    #about { background: var(--bg2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; }
+    .about-text strong { color: var(--text); }
+    .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 2rem; }
+    .hl-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; }
+    .hl-item i { color: var(--accent2); font-size: 1rem; margin-bottom: .4rem; display: block; }
+    .hl-item strong { font-family: var(--head); font-size: .88rem; font-weight: 700; display: block; }
+    .hl-item span { font-size: .76rem; color: var(--muted); }
+
+    .quote-box {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: 12px; padding: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .quote-box.teal { border-left-color: var(--accent2); }
+    .quote-box blockquote { font-size: 1.05rem; font-style: italic; color: var(--text); line-height: 1.7; margin-bottom: .9rem; }
+    .quote-box blockquote strong { color: var(--accent2); font-style: normal; }
+    .q-author { font-size: .82rem; color: var(--muted); }
+    .q-author strong { color: var(--accent); }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.3rem; }
+    .sk-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color .2s, transform .2s; }
+    .sk-card:hover { border-color: rgba(79,142,247,.4); transform: translateY(-3px); }
+    .sk-icon { width: 40px; height: 40px; background: rgba(79,142,247,.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; color: var(--accent); margin-bottom: 1rem; }
+    .sk-card h3 { font-family: var(--head); font-size: .95rem; font-weight: 700; margin-bottom: .75rem; }
+    .tag-wrap { display: flex; flex-wrap: wrap; gap: .38rem; }
+    .tag { font-size: .73rem; padding: .28rem .65rem; background: rgba(255,255,255,.05); border: 1px solid var(--border); border-radius: 100px; color: var(--muted); }
+
+    /* EXPERIENCE */
+    #experience { background: var(--bg2); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent); }
+    .tl-item { position: relative; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+    .tl-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .tl-dot { position: absolute; left: -2.42rem; top: .25rem; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; border: 3px solid var(--bg2); box-shadow: 0 0 0 2px var(--accent); }
+    .tl-meta { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .5rem; margin-bottom: .7rem; }
+    .tl-company { font-size: .82rem; color: var(--accent2); font-weight: 600; }
+    .tl-date { font-size: .78rem; color: var(--muted); background: var(--card); border: 1px solid var(--border); padding: .22rem .7rem; border-radius: 100px; }
+    .tl-role { font-family: var(--head); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; }
+    .tl-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .tl-list li { font-size: .9rem; color: var(--muted); padding-left: 1.2rem; position: relative; }
+    .tl-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: .78rem; }
+
+    /* METRICS */
+    #metrics { background: var(--bg3); }
+    .metrics-banner {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.3rem 1.5rem; margin-bottom: 2rem; font-size: .88rem; color: var(--muted); line-height: 1.6;
+    }
+    .metrics-banner strong { color: var(--accent2); }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.1rem; }
+    .m-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; transition: border-color .2s; }
+    .m-card:hover { border-color: rgba(79,142,247,.4); }
+    .m-num { font-family: var(--head); font-size: 2.3rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: .4rem; }
+    .m-num.g { color: var(--accent2); }
+    .m-label { font-size: .78rem; color: var(--muted); }
+
+    /* PROJECTS */
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.4rem; }
+    .proj-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.8rem; transition: all .25s; position: relative; overflow: hidden;
+    }
+    .proj-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0); transition: transform .3s; transform-origin: left;
+    }
+    .proj-card:hover::before { transform: scaleX(1); }
+    .proj-card:hover { border-color: rgba(79,142,247,.3); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+    .proj-type { font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent2); margin-bottom: .7rem; }
+    .proj-card h3 { font-family: var(--head); font-size: 1.08rem; font-weight: 700; margin-bottom: .7rem; }
+    .proj-card p { font-size: .87rem; color: var(--muted); margin-bottom: 1.2rem; line-height: 1.6; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: .38rem; }
+    .ptag { font-size: .71rem; padding: .25rem .6rem; background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.22); border-radius: 100px; color: var(--accent); }
+
+    /* BLOGS */
+    #blogs { background: var(--bg2); }
+    .blogs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; }
+    .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; transition: all .2s; position: relative; }
+    .blog-card:hover { border-color: rgba(79,142,247,.3); transform: translateY(-3px); }
+    .blog-badge { position: absolute; top: 1.3rem; right: 1.3rem; font-size: .7rem; padding: .22rem .6rem; background: rgba(255,255,255,.05); border: 1px solid var(--border); border-radius: 100px; color: var(--muted); }
+    .blog-cat { font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .7rem; }
+    .blog-card h3 { font-family: var(--head); font-size: .98rem; font-weight: 700; margin-bottom: .7rem; line-height: 1.4; }
+    .blog-card p { font-size: .84rem; color: var(--muted); margin-bottom: 1.1rem; }
+    .blog-link { font-size: .8rem; color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: .3rem; transition: gap .2s; }
+    .blog-link:hover { gap: .6rem; }
+
+    /* CERTS */
+    #certifications { background: var(--bg3); }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; }
+    .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; display: flex; align-items: center; gap: 1.1rem; transition: .2s; }
+    .cert-card:hover { border-color: rgba(0,212,170,.4); transform: translateX(4px); }
+    .cert-icon { width: 46px; height: 46px; background: rgba(0,212,170,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: var(--accent2); flex-shrink: 0; }
+    .cert-info h4 { font-family: var(--head); font-size: .92rem; font-weight: 700; margin-bottom: .2rem; }
+    .cert-info span { font-size: .77rem; color: var(--muted); }
+    .cert-card.dim { opacity: .65; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: var(--bg2); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.4rem; }
+    .testi-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; transition: .2s; }
+    .testi-card:hover { border-color: rgba(79,142,247,.3); transform: translateY(-3px); }
+    .testi-card.dim { border-style: dashed; opacity: .75; }
+    .big-quote { font-size: 2.5rem; color: var(--accent); line-height: 1; margin-bottom: .8rem; font-family: Georgia, serif; }
+    .testi-card p { font-size: .93rem; font-style: italic; color: var(--text); line-height: 1.7; margin-bottom: 1.4rem; }
+    .t-author { display: flex; align-items: center; gap: .75rem; }
+    .t-avatar { width: 40px; height: 40px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; color: #fff; flex-shrink: 0; }
+    .t-info strong { display: block; font-size: .88rem; font-weight: 600; }
+    .t-info span { font-size: .76rem; color: var(--muted); }
+
+    /* CONTACT */
+    #contact { background: var(--bg3); }
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+    .contact-side h3 { font-family: var(--head); font-size: 1.35rem; font-weight: 700; margin-bottom: .9rem; }
+    .contact-side p { color: var(--muted); margin-bottom: 2rem; font-size: .93rem; }
+    .c-links { display: flex; flex-direction: column; gap: .7rem; }
+    .c-link { display: flex; align-items: center; gap: .75rem; color: var(--muted); text-decoration: none; font-size: .88rem; transition: .2s; padding: .7rem 1rem; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+    .c-link:hover { color: var(--accent); border-color: rgba(79,142,247,.4); }
+    .c-link i { color: var(--accent); width: 16px; text-align: center; }
+
+    .c-form { display: flex; flex-direction: column; gap: .9rem; }
+    .form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .fg { display: flex; flex-direction: column; gap: .35rem; }
+    .fg label { font-size: .78rem; font-weight: 500; color: var(--muted); }
+    .fg input, .fg textarea, .fg select { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: .7rem .95rem; color: var(--text); font-family: var(--body); font-size: .88rem; transition: border-color .2s; outline: none; }
+    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--accent); }
+    .fg textarea { resize: vertical; min-height: 120px; }
+    .fg select option { background: #1a2030; }
+    .form-ok { display: none; text-align: center; padding: 2rem; background: rgba(0,212,170,.08); border: 1px solid rgba(0,212,170,.3); border-radius: 10px; color: var(--accent2); }
+
+    /* FOOTER */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 1.8rem 2.5rem; text-align: center; color: var(--muted); font-size: .82rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      nav { padding: 1rem 1.3rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 1.2rem; gap: 1rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 1.3rem; }
+      .about-grid, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .about-highlights { grid-template-columns: 1fr 1fr; }
+      .form-row2 { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .hero { padding: 7rem 1.3rem 4rem; }
+    }
+    @media(max-width:480px){
+      .about-highlights { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: column; gap: 1.2rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">🚀</span>
-                    <span class="logo-text">GrowthVerse</span>
-                </a>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="digital_marketing_week_plan.html" class="nav-link">Digital marketing week plan</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">We Drive Digital Growth</h1>
-                <p class="hero-subtitle">Transform your business with data-driven digital marketing strategies that deliver real results</p>
-                <a href="contact.html" class="btn btn-primary">Book a Free Strategy Call</a>
-            </div>
-        </div>
-    </section>
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Raman<span>.</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#metrics">Results</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#blogs">Blogs</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-    <!-- Core Services -->
-    <section class="core-services">
-        <div class="container">
-            <h2 class="section-title">Our Core Services</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">🎯</div>
-                    <h3>SEO Optimization</h3>
-                    <p>Rank higher on Google and drive organic traffic with our proven SEO strategies</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">📱</div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Build your brand presence and engage your audience across all social platforms</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">💡</div>
-                    <h3>Google Ads Campaigns</h3>
-                    <p>Get instant visibility and qualified leads with targeted PPC advertising</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Open to opportunities</div>
+    <h1 class="hero-name">Raman<br><span class="a1">Patidar</span></h1>
+    <p class="hero-sub">Digital & Performance Marketer — turning data into growth through SEO, Meta Ads, social media, and AI-powered content.</p>
+    <div class="hero-tags">
+      <span class="htag">📍 Madhya Pradesh, India</span>
+      <span class="htag">🔍 SEO Executive</span>
+      <span class="htag">📊 Performance Marketer</span>
+      <span class="htag">📱 Social Media Manager</span>
+      <span class="htag">✍️ Content Strategist</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+      <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+      <a href="https://www.linkedin.com/in/ramanpatidar36/" target="_blank" class="btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hs-num"><span class="counter" data-target="2506">0</span><span style="color:var(--accent)">+</span></div>
+        <div class="hs-label">Ad Views · 4-day campaign</div>
+      </div>
+      <div>
+        <div class="hs-num"><span class="counter" data-target="741">0</span></div>
+        <div class="hs-label">Post Engagements</div>
+      </div>
+      <div>
+        <div class="hs-num" style="color:var(--accent2)">₹<span class="counter" data-target="53">0</span></div>
+        <div class="hs-label">Cost Per Message</div>
+      </div>
+      <div>
+        <div class="hs-num"><span class="counter" data-target="2">0</span><span style="color:var(--accent)">+</span></div>
+        <div class="hs-label">Live Client Projects</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"GrowthVerse transformed our online presence. Our organic traffic increased by 300% in just 6 months!"</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">JD</div>
-                            <div class="author-info">
-                                <h4>John Doe</h4>
-                                <p>CEO, TechStart Inc.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"The best digital marketing agency we've worked with. Professional, results-driven, and always available."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">SM</div>
-                            <div class="author-info">
-                                <h4>Sarah Miller</h4>
-                                <p>Marketing Director, EcoShop</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <p>"Our ROI has never been better. GrowthVerse knows exactly how to reach our target audience."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">RK</div>
-                            <div class="author-info">
-                                <h4>Robert Kim</h4>
-                                <p>Founder, FitLife Studio</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button class="slider-btn prev-btn">‹</button>
-                    <button class="slider-btn next-btn">›</button>
-                </div>
-            </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="s-label">About Me</p>
+        <h2 class="s-title">Results-first<br>marketer.</h2>
+        <p>I'm a <strong>Digital & Performance Marketing professional</strong> based in Madhya Pradesh, with hands-on experience across SEO, Meta Ads, social media, and AI-powered content — built through real internships and self-driven client projects.</p>
+        <p>Currently managing <strong>Hurrywell Ayurveda's</strong> full digital presence — on-page SEO, e-commerce product management, Meta Ad campaigns, and monitoring via GTM, GA4 & Google Search Console. Also planning and preparing their Google Ads strategy.</p>
+        <p>What sets me apart: I don't wait to be assigned — I <strong>identify gaps, pitch ideas, and learn by implementing</strong>. My senior noted my rapid adaptability and strong situational analysis as standout traits.</p>
+        <div class="about-highlights">
+          <div class="hl-item"><i class="fas fa-search"></i><strong>SEO</strong><span>On-page, Off-page, Technical</span></div>
+          <div class="hl-item"><i class="fab fa-meta"></i><strong>Meta Ads</strong><span>Facebook & Instagram</span></div>
+          <div class="hl-item"><i class="fas fa-pen-nib"></i><strong>Content</strong><span>AI-assisted, SEO blogs</span></div>
+          <div class="hl-item"><i class="fas fa-chart-line"></i><strong>Analytics</strong><span>GA4 · GSC · GTM</span></div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>🚀 GrowthVerse</h3>
-                    <p>Driving digital growth for businesses worldwide</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
-                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
-                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 GrowthVerse. All rights reserved.</p>
-            </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="quote-box">
+          <blockquote>"You have a true potential to adapt and learn quickly — and your situational analysis is stronger in any aspect."</blockquote>
+          <div class="q-author">— <strong>Senior Mentor · Prometteur Solutions Pvt. Ltd., Pune</strong> · Digital Marketing Internship</div>
         </div>
-    </footer>
+        <div class="quote-box teal">
+          <blockquote>Currently learning and implementing <strong>Google Ads</strong> — expanding into PPC to become a full-stack performance marketer. Every project is a classroom.</blockquote>
+          <div class="q-author">— <strong>Ongoing</strong> · Hurrywell Ayurveda (Active Client)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="scripts/auth.js"></script>
-    <script src="assets/js/script.js"></script>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="s-label reveal">What I Bring</p>
+    <h2 class="s-title reveal">Skills & Tools</h2>
+    <p class="s-desc reveal">A growing full-stack digital marketing toolkit, built through real campaigns, audits, and content work.</p>
+    <div class="skills-grid">
+      <div class="sk-card reveal">
+        <div class="sk-icon"><i class="fas fa-search"></i></div>
+        <h3>Search Engine Optimization</h3>
+        <div class="tag-wrap">
+          <span class="tag">Keyword Research</span><span class="tag">On-Page SEO</span><span class="tag">Off-Page SEO</span><span class="tag">Technical SEO</span><span class="tag">Schema Markup</span><span class="tag">Backlink Analysis</span><span class="tag">Site Audits</span><span class="tag">Internal Linking</span>
+        </div>
+      </div>
+      <div class="sk-card reveal" style="transition-delay:.08s">
+        <div class="sk-icon"><i class="fab fa-meta"></i></div>
+        <h3>Performance Marketing</h3>
+        <div class="tag-wrap">
+          <span class="tag">Meta Ads</span><span class="tag">Facebook & Instagram</span><span class="tag">Audience Targeting</span><span class="tag">Custom Audiences</span><span class="tag">Lookalike Audiences</span><span class="tag">Facebook Pixel</span><span class="tag">A/B Testing</span><span class="tag">CTR / CPC / CPL</span>
+        </div>
+      </div>
+      <div class="sk-card reveal" style="transition-delay:.15s">
+        <div class="sk-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Social Media Management</h3>
+        <div class="tag-wrap">
+          <span class="tag">Content Calendar</span><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">LinkedIn</span><span class="tag">Reels Strategy</span><span class="tag">Hashtag Research</span><span class="tag">Community Management</span>
+        </div>
+      </div>
+      <div class="sk-card reveal" style="transition-delay:.22s">
+        <div class="sk-icon"><i class="fas fa-pen-fancy"></i></div>
+        <h3>Content & Copywriting</h3>
+        <div class="tag-wrap">
+          <span class="tag">SEO Blog Writing</span><span class="tag">Ad Copywriting</span><span class="tag">Long-form Articles</span><span class="tag">Multilingual Content</span><span class="tag">Product Descriptions</span><span class="tag">AI-assisted Creation</span>
+        </div>
+      </div>
+      <div class="sk-card reveal" style="transition-delay:.29s">
+        <div class="sk-icon"><i class="fas fa-tools"></i></div>
+        <h3>Analytics & Tools</h3>
+        <div class="tag-wrap">
+          <span class="tag">Google Analytics 4</span><span class="tag">Search Console</span><span class="tag">Google Tag Manager</span><span class="tag">Meta Ads Manager</span><span class="tag">SEMrush</span><span class="tag">Ahrefs</span><span class="tag">Ubersuggest</span><span class="tag">Canva</span>
+        </div>
+      </div>
+      <div class="sk-card reveal" style="transition-delay:.35s">
+        <div class="sk-icon"><i class="fas fa-store"></i></div>
+        <h3>E-Commerce & Operations</h3>
+        <div class="tag-wrap">
+          <span class="tag">Product Listing</span><span class="tag">Catalogue Creation</span><span class="tag">Carousel Design</span><span class="tag">GenAI + Canva</span><span class="tag">Conversion Tracking</span><span class="tag">Google Ads (Learning)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="s-label reveal">Career</p>
+    <h2 class="s-title reveal">Experience</h2>
+    <p class="s-desc reveal">Real-world exposure from internship to active client management — learning and implementing at every step.</p>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <div>
+            <div class="tl-company">Hurrywell Ayurveda · hurrywell.in</div>
+            <div class="tl-role">Digital Marketing & E-Commerce Manager</div>
+          </div>
+          <div class="tl-date">2025 – Present</div>
+        </div>
+        <ul class="tl-list">
+          <li>Managing complete on-page SEO for the Ayurvedic product catalogue</li>
+          <li>Planning, running, and optimising Meta Ads campaigns (Facebook & Instagram) for lead generation</li>
+          <li>Adding and managing product listings on the e-commerce store with AI-generated + Canva creatives</li>
+          <li>Creating product carousels and catalogues using GenAI tools and Canva</li>
+          <li>Continuously monitoring site performance via GTM, Google Search Console & GA4</li>
+          <li>Researching and planning Google Ads campaigns for upcoming rollout</li>
+          <li>Writing SEO-optimised product descriptions and benefit-focused content for the brand</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal" style="transition-delay:.12s">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">
+          <div>
+            <div class="tl-company">Prometteur Solutions Pvt. Ltd. · Pune</div>
+            <div class="tl-role">Digital Marketing / SEO Intern</div>
+          </div>
+          <div class="tl-date">Sep 2025 – Mar 2026</div>
+        </div>
+        <ul class="tl-list">
+          <li>Built high-quality backlinks through competitor analysis and targeted outreach</li>
+          <li>Wrote and published SEO-optimised blog content including multilingual articles for long-tail keywords</li>
+          <li>Implemented structured data / schema markup (Article, FAQ, Breadcrumb) to improve rich-snippet CTR</li>
+          <li>Conducted on-page audits — meta titles, descriptions, heading hierarchy, internal linking</li>
+          <li>Resolved crawl errors and improved website indexing via Google Search Console</li>
+          <li><strong style="color:var(--text)">Self-initiated:</strong> Approached senior to learn Meta Ads independently and ran campaigns beyond the assigned scope</li>
+          <li>Tracked keyword rankings and organic traffic via GA4 and Search Console</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN METRICS -->
+<section id="metrics">
+  <div class="container">
+    <p class="s-label reveal">Real Numbers</p>
+    <h2 class="s-title reveal">Campaign Results</h2>
+    <p class="s-desc reveal">Live data from a Meta Ads campaign I ran for Hurrywell Ayurveda — real results, real budget.</p>
+    <div class="metrics-banner reveal">
+      <strong>Campaign:</strong> Hurrywell Ayurveda &nbsp;·&nbsp; Goal: Get More Messages &nbsp;·&nbsp; Facebook & Instagram Reel Boost &nbsp;·&nbsp; 4-day run &nbsp;·&nbsp; Daily budget: ₹94.23 &nbsp;·&nbsp; Status: ✅ Completed
+    </div>
+    <div class="metrics-grid">
+      <div class="m-card reveal"><div class="m-num"><span class="counter" data-target="2506">0</span></div><div class="m-label">Total Views</div></div>
+      <div class="m-card reveal" style="transition-delay:.06s"><div class="m-num"><span class="counter" data-target="2181">0</span></div><div class="m-label">Unique Viewers</div></div>
+      <div class="m-card reveal" style="transition-delay:.12s"><div class="m-num"><span class="counter" data-target="741">0</span></div><div class="m-label">Post Engagements</div></div>
+      <div class="m-card reveal" style="transition-delay:.18s"><div class="m-num"><span class="counter" data-target="694">0</span></div><div class="m-label">3-Sec Video Plays</div></div>
+      <div class="m-card reveal" style="transition-delay:.24s"><div class="m-num g">₹<span class="counter" data-target="53">0</span>.40</div><div class="m-label">Cost Per Message</div></div>
+      <div class="m-card reveal" style="transition-delay:.3s"><div class="m-num g"><span class="counter" data-target="7">0</span></div><div class="m-label">Conversations Started</div></div>
+      <div class="m-card reveal" style="transition-delay:.36s"><div class="m-num"><span class="counter" data-target="33">0</span></div><div class="m-label">Post Reactions</div></div>
+      <div class="m-card reveal" style="transition-delay:.42s"><div class="m-num"><span class="counter" data-target="11">0</span></div><div class="m-label">Link Clicks</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="s-label reveal">Portfolio</p>
+    <h2 class="s-title reveal">Projects</h2>
+    <p class="s-desc reveal">Self-initiated and client projects demonstrating my range across paid, organic, and content marketing.</p>
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-type">Performance Marketing · Live Client</div>
+        <h3>Meta Ads Campaign — Hurrywell Ayurveda</h3>
+        <p>End-to-end Meta Ads campaign for an Ayurvedic health brand. Set up interest-based, custom & lookalike audiences, created ad creatives using GenAI + Canva (static & reel), implemented Facebook Pixel, and optimised for messaging conversions within a ₹94/day budget.</p>
+        <div class="proj-tags">
+          <span class="ptag">Meta Ads</span><span class="ptag">Facebook Pixel</span><span class="ptag">Audience Targeting</span><span class="ptag">Canva</span><span class="ptag">Retargeting</span><span class="ptag">CTR Optimisation</span>
+        </div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.1s">
+        <div class="proj-type">SEO & E-Commerce · Live Client</div>
+        <h3>On-Page SEO & Store Management — Hurrywell Ayurveda</h3>
+        <p>Ongoing management of the brand's SEO and e-commerce store. Optimised product pages, added schema markup, managed GSC & GA4 monitoring via GTM, created product carousels with AI + Canva, and preparing Google Ads campaigns.</p>
+        <div class="proj-tags">
+          <span class="ptag">On-Page SEO</span><span class="ptag">GA4</span><span class="ptag">GTM</span><span class="ptag">GSC</span><span class="ptag">Schema Markup</span><span class="ptag">Google Ads</span>
+        </div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.18s">
+        <div class="proj-type">Social Media · Self Project</div>
+        <h3>30-Day Content Strategy for a Niche Brand</h3>
+        <p>Built a full 30-day content calendar for Instagram and Facebook. Created platform-specific captions, hooks, Reel concepts and hashtag strategy using AI tools. Tracked engagement metrics and iterated strategy based on reach, impressions, saves, and shares.</p>
+        <div class="proj-tags">
+          <span class="ptag">Content Calendar</span><span class="ptag">Instagram</span><span class="ptag">Facebook</span><span class="ptag">Reels</span><span class="ptag">Community Mgmt</span>
+        </div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.25s">
+        <div class="proj-type">SEO Content · Self Project</div>
+        <h3>SEO Blog Growth Project</h3>
+        <p>Keyword research with GSC, Ubersuggest & SEMrush. Wrote long-form SEO articles targeting informational and commercial-intent keywords, optimised meta tags, heading structure, and internal linking. Added schema markup and tracked GSC performance changes.</p>
+        <div class="proj-tags">
+          <span class="ptag">Keyword Research</span><span class="ptag">Long-form SEO</span><span class="ptag">SEMrush</span><span class="ptag">Schema Markup</span><span class="ptag">GSC</span>
+        </div>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:.32s">
+        <div class="proj-type">Content · Self Project</div>
+        <h3>Finance & Economy Blog</h3>
+        <p>Publishing SEO-optimised articles covering personal finance, macroeconomics, and market trends. Building topical authority through structured content strategy, keyword targeting, and internal linking — growing organic traffic from scratch.</p>
+        <div class="proj-tags">
+          <span class="ptag">Finance Niche</span><span class="ptag">Topical Authority</span><span class="ptag">Long-form Writing</span><span class="ptag">Internal Linking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<section id="blogs">
+  <div class="container">
+    <p class="s-label reveal">Writing</p>
+    <h2 class="s-title reveal">Published Blogs</h2>
+    <p class="s-desc reveal">SEO-optimised articles across marketing, Ayurveda, and finance — written for real websites and self-projects.</p>
+    <div class="blogs-grid">
+      <div class="blog-card reveal">
+        <span class="blog-badge">Prometteur Solutions</span>
+        <div class="blog-cat">SEO · Digital Marketing</div>
+        <h3>Multilingual SEO Blog Articles</h3>
+        <p>SEO-optimised blog content targeting long-tail keywords including multilingual articles published on the company website during the internship at Prometteur Solutions, Pune.</p>
+        <a href="#" class="blog-link">Links coming soon <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="blog-card reveal" style="transition-delay:.1s">
+        <span class="blog-badge">Self Project</span>
+        <div class="blog-cat">Finance · Economics</div>
+        <h3>Finance & Economy Blog</h3>
+        <p>Personal finance, macroeconomics, and market analysis articles built around keyword strategy and topical authority. Targeting informational and commercial-intent queries to drive organic growth.</p>
+        <a href="#" class="blog-link">View Blog <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="blog-card reveal" style="transition-delay:.2s">
+        <span class="blog-badge">Live Client</span>
+        <div class="blog-cat">Ayurveda · Health</div>
+        <h3>Product & Benefit Content — Hurrywell Ayurveda</h3>
+        <p>Product descriptions and benefit-focused SEO content written for Hurrywell Ayurveda's e-commerce store and blog — optimised for search visibility and conversion.</p>
+        <a href="https://hurrywell.in" target="_blank" class="blog-link">Visit Site <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <p class="s-label reveal">Credentials</p>
+    <h2 class="s-title reveal">Certifications</h2>
+    <p class="s-desc reveal">Verified credentials in digital marketing — with more actively in progress.</p>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon"><i class="fab fa-google"></i></div>
+        <div class="cert-info">
+          <h4>Google Fundamentals of Digital Marketing</h4>
+          <span>Google Digital Garage · Certified ✓</span>
+        </div>
+      </div>
+      <div class="cert-card dim reveal" style="transition-delay:.1s">
+        <div class="cert-icon"><i class="fab fa-meta"></i></div>
+        <div class="cert-info">
+          <h4>Meta Blueprint Certification</h4>
+          <span>In Progress · Planned</span>
+        </div>
+      </div>
+      <div class="cert-card dim reveal" style="transition-delay:.2s">
+        <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="cert-info">
+          <h4>Google Ads Certification</h4>
+          <span>Planned · Preparing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <p class="s-label reveal">Social Proof</p>
+    <h2 class="s-title reveal">What People Say</h2>
+    <p class="s-desc reveal">Feedback from people I've worked with and learned from directly.</p>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="big-quote">"</div>
+        <p>You have a true potential to adapt and learn quickly — and your situational analysis is stronger in any aspect. The initiative you took to learn Meta Ads independently and implement it on your own is rare in someone at this stage.</p>
+        <div class="t-author">
+          <div class="t-avatar">PS</div>
+          <div class="t-info">
+            <strong>Senior Mentor</strong>
+            <span>Prometteur Solutions Pvt. Ltd., Pune</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card dim reveal" style="transition-delay:.12s">
+        <div class="big-quote">"</div>
+        <p>Raman has been managing our brand's complete digital presence — SEO, content, Meta Ads, and the e-commerce store. Proactive, thorough, and always brings new ideas to the table.</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,var(--accent2),#00a882)">HA</div>
+          <div class="t-info">
+            <strong>Hurrywell Ayurveda</strong>
+            <span>Active Client · hurrywell.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="s-label reveal">Get In Touch</p>
+    <h2 class="s-title reveal">Let's Work Together</h2>
+    <p class="s-desc reveal">Open to full-time roles, freelance projects, and long-term collaborations in digital marketing.</p>
+    <div class="contact-wrap">
+      <div class="contact-side reveal">
+        <h3>Reach out directly</h3>
+        <p>Whether you're a brand needing SEO, a startup looking for ad management, or a recruiter — I'd love to hear from you.</p>
+        <div class="c-links">
+          <a href="mailto:ramanpatidar36@gmail.com" class="c-link"><i class="fas fa-envelope"></i> ramanpatidar36@gmail.com</a>
+          <a href="tel:+919589704198" class="c-link"><i class="fas fa-phone"></i> +91-9589704198</a>
+          <a href="https://www.linkedin.com/in/ramanpatidar36/" target="_blank" class="c-link"><i class="fab fa-linkedin"></i> linkedin.com/in/ramanpatidar36</a>
+          <a class="c-link" style="cursor:default"><i class="fas fa-map-marker-alt"></i> Shajapur, Madhya Pradesh, India</a>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="c-form" id="cForm">
+          <div class="form-row2">
+            <div class="fg"><label>Your Name</label><input type="text" placeholder="Arjun Sharma" id="fn"/></div>
+            <div class="fg"><label>Email Address</label><input type="email" placeholder="arjun@company.com" id="fe"/></div>
+          </div>
+          <div class="fg">
+            <label>I'm looking for...</label>
+            <select id="ft">
+              <option value="">Select a service</option>
+              <option>SEO Services</option>
+              <option>Meta Ads Management</option>
+              <option>Social Media Management</option>
+              <option>Content Writing / Blogs</option>
+              <option>Full Digital Marketing</option>
+              <option>E-Commerce Marketing</option>
+              <option>Hiring / Full-time Role</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Message</label><textarea placeholder="Tell me about your project or opportunity..." id="fm"></textarea></div>
+          <button class="btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+        <div class="form-ok" id="fOk">
+          <i class="fas fa-check-circle" style="font-size:2rem;margin-bottom:.8rem;display:block;"></i>
+          <strong>Message sent!</strong><br>
+          <span style="font-size:.88rem;color:var(--muted)">I'll get back to you within 24 hours.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Crafted by <a href="mailto:ramanpatidar36@gmail.com">Raman Patidar</a> · Digital & Performance Marketer · Shajapur, MP &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/ramanpatidar36/" target="_blank">LinkedIn</a></p>
+</footer>
+
+<script>
+  // Mobile nav
+  function toggleMenu(){ document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+  // Active nav
+  const secs = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    secs.forEach(s=>{ if(window.scrollY>=s.offsetTop-130) cur=s.id; });
+    navAs.forEach(a=>{ a.classList.toggle('active', a.getAttribute('href')==='#'+cur); });
+  });
+
+  // Counter animation
+  function animCount(el){
+    const target=parseInt(el.dataset.target), dur=1800, start=performance.now();
+    const tick=now=>{
+      const p=Math.min((now-start)/dur,1), ease=1-Math.pow(1-p,3);
+      el.textContent=Math.floor(ease*target).toLocaleString();
+      if(p<1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const cObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){animCount(e.target);cObs.unobserve(e.target);} });
+  },{threshold:.5});
+  document.querySelectorAll('.counter').forEach(c=>cObs.observe(c));
+
+  // Form
+  function submitForm(){
+    if(!document.getElementById('fn').value||!document.getElementById('fe').value||!document.getElementById('fm').value){
+      alert('Please fill in all required fields.'); return;
+    }
+    document.getElementById('cForm').style.display='none';
+    document.getElementById('fOk').style.display='block';
+  }
+</script>
 </body>
 </html>
