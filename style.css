@@ -84,12 +84,12 @@ h3 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.55rem;
   font-weight: 800;
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: 2.45rem;
   font-weight: 800;
 }
 
@@ -100,7 +100,7 @@ h3 {
 
 p {
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.62;
 }
 
 .section-dark p {
@@ -275,7 +275,7 @@ p {
 
 .hero-copy p {
   max-width: 610px;
-  margin: 22px 0 30px;
+  margin: 18px 0 26px;
 }
 
 .hero-actions {
@@ -444,7 +444,7 @@ p {
 }
 
 .service-card {
-  padding: 32px;
+  padding: 26px;
   background: var(--soft);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.06);
 }
@@ -463,7 +463,8 @@ p {
 }
 
 .service-card p {
-  margin: 14px 0 18px;
+  margin: 12px 0 16px;
+  font-size: 0.92rem;
 }
 
 .service-card a,
@@ -544,28 +545,59 @@ p {
 
 .about-copy > p {
   max-width: 580px;
-  margin: 22px 0 30px;
+  margin: 18px 0 22px;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin: 0 0 32px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 24px;
+}
+
+.performance-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.metric-chip {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 168, 0, 0.42);
+  border-radius: 999px;
+  cursor: default;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.metric-chip:hover {
+  background: rgba(255, 168, 0, 0.16);
+  border-color: rgba(255, 168, 0, 0.88);
+  transform: translateY(-2px);
 }
 
 .stat strong {
-  display: block;
+  display: inline;
   color: var(--gold);
-  font-size: 2rem;
+  font-size: 0.84rem;
   line-height: 1;
+  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
-.stat span:last-child {
-  display: block;
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 0.88rem;
+.stat > span:first-child {
+  display: inline;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .about-actions {
@@ -690,6 +722,7 @@ p {
 
 .project-bottom h3 {
   max-width: 420px;
+  font-size: 1.18rem;
 }
 
 .circle-link,
@@ -768,7 +801,7 @@ p {
 .timeline strong {
   display: block;
   margin: 4px 0;
-  font-size: 1.35rem;
+  font-size: 1.18rem;
 }
 
 .timeline p {
@@ -849,7 +882,7 @@ p {
   position: relative;
   padding-left: 28px;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 0.92rem;
+  font-size: 0.86rem;
 }
 
 .price-card li::before {
@@ -995,10 +1028,14 @@ textarea:focus {
 
 .testimonial-card {
   flex: 0 0 100%;
-  padding: 34px;
+  padding: 28px;
   text-align: left;
   background: var(--white);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card p {
+  font-size: 0.94rem;
 }
 
 .rating {
@@ -1082,11 +1119,12 @@ textarea:focus {
 }
 
 .blog-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
 }
 
 .blog-card p {
-  margin: 12px 0;
+  margin: 10px 0;
+  font-size: 0.9rem;
 }
 
 .faq-container {
@@ -1397,11 +1435,37 @@ textarea:focus {
   }
 
   h1 {
-    font-size: 2.45rem;
+    font-size: 2.15rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.12rem;
+  }
+
+  .hero-copy p,
+  .about-copy > p,
+  .service-card p,
+  .blog-card p,
+  .testimonial-card p {
+    font-size: 0.9rem;
+  }
+
+  .metric-chip {
+    min-height: 32px;
+    padding: 5px 9px;
+    gap: 5px;
+  }
+
+  .stat strong {
+    font-size: 0.78rem;
+  }
+
+  .stat > span:first-child {
+    font-size: 0.62rem;
   }
 
   .logo {
