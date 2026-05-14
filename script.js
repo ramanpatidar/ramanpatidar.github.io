@@ -99,18 +99,26 @@ let countersStarted = false;
 
 function animateCounter(counter) {
   const target = Number(counter.dataset.target || 0);
+  const prefix = counter.dataset.prefix || "";
+  const suffix = counter.dataset.suffix || "";
+  const decimals = Number(counter.dataset.decimals || 0);
   const duration = 1300;
   const startTime = performance.now();
+  const formatter = new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
 
   function tick(now) {
     const progress = Math.min((now - startTime) / duration, 1);
-    const value = Math.floor(progress * target);
-    counter.textContent = String(value);
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    const value = easedProgress * target;
+    counter.textContent = `${prefix}${formatter.format(value)}${suffix}`;
 
     if (progress < 1) {
       requestAnimationFrame(tick);
     } else {
-      counter.textContent = String(target);
+      counter.textContent = `${prefix}${formatter.format(target)}${suffix}`;
     }
   }
 
