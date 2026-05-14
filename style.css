@@ -1612,3 +1612,651 @@ textarea:focus {
     flex-direction: column;
   }
 }
+
+/* Compact density pass: keeps the portfolio close to the reference screenshot proportions. */
+.section {
+  padding: 62px 0;
+}
+
+h1 {
+  font-size: clamp(2.55rem, 4.5vw, 3.35rem);
+  line-height: 1.06;
+}
+
+h2 {
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: 1.18rem;
+}
+
+.site-header {
+  padding: 16px 0 8px;
+}
+
+.nav-shell {
+  min-height: 50px;
+  padding: 6px 8px 6px 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+}
+
+.contact-nav {
+  min-height: 38px;
+  padding: 9px 18px;
+}
+
+.hero {
+  padding: 104px 0 50px;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.8fr);
+  gap: 34px;
+}
+
+.hello-pill {
+  min-height: 32px;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+}
+
+.hero-copy p {
+  max-width: 520px;
+  margin: 14px 0 20px;
+  font-size: 0.94rem;
+}
+
+.hero-actions {
+  gap: 10px;
+}
+
+.btn {
+  min-height: 40px;
+  padding: 10px 18px;
+  font-size: 0.82rem;
+}
+
+.hero-visual {
+  min-height: 370px;
+}
+
+.gold-circle {
+  width: 310px;
+  height: 310px;
+}
+
+.hero-photo {
+  top: 52px;
+  width: 285px;
+  height: 285px;
+}
+
+.floating-badge {
+  padding: 9px 14px;
+  font-size: 0.78rem;
+}
+
+.badge-one {
+  right: 0;
+  bottom: 82px;
+}
+
+.badge-two {
+  left: 0;
+  bottom: 34px;
+}
+
+.hire-me-badge {
+  top: 42px;
+  right: 6px;
+  width: 72px;
+  height: 72px;
+}
+
+.hire-me-badge span {
+  width: 42px;
+  font-size: 0.56rem;
+}
+
+.marquee {
+  padding: 11px 0;
+}
+
+.marquee-track {
+  gap: 20px;
+}
+
+.marquee-track span,
+.marquee-track b {
+  font-size: 1.08rem;
+}
+
+.section-top {
+  margin-bottom: 30px;
+}
+
+.services-grid,
+.pricing-grid,
+.blogs-grid {
+  gap: 18px;
+}
+
+.service-card {
+  padding: 20px;
+}
+
+.service-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.service-card p {
+  display: -webkit-box;
+  min-height: 0;
+  margin: 10px 0 12px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.about-grid {
+  grid-template-columns: 0.78fr 1fr;
+  gap: 42px;
+}
+
+.about-visual {
+  min-height: 330px;
+}
+
+.about-photo {
+  width: 275px;
+  height: 275px;
+}
+
+.skill-tag {
+  padding: 6px 10px;
+  font-size: 0.66rem;
+}
+
+.tag-a { top: 42px; left: 22px; }
+.tag-b { top: 86px; right: 24px; }
+.tag-c { top: 188px; left: 8px; }
+.tag-d { right: 4px; bottom: 88px; }
+.tag-e { left: 48px; bottom: 48px; }
+.tag-f { right: 78px; bottom: 20px; }
+.tag-g { left: 118px; top: 18px; }
+
+.about-copy > p {
+  margin: 14px 0 16px;
+  font-size: 0.9rem;
+}
+
+.metric-chip {
+  min-height: 30px;
+  padding: 5px 8px;
+}
+
+.stat strong {
+  font-size: 0.76rem;
+}
+
+.stat > span:first-child {
+  font-size: 0.58rem;
+}
+
+.about-actions {
+  gap: 16px;
+}
+
+.signature {
+  font-size: 1.35rem;
+}
+
+.tools-grid {
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.tool-icon {
+  width: 86px;
+  height: 86px;
+  padding: 18px;
+  border-width: 12px;
+}
+
+.project-card {
+  padding: 12px;
+}
+
+.tag-row {
+  gap: 6px;
+  margin: 12px 0 10px;
+}
+
+.tag-row span,
+.blog-meta span {
+  min-height: 22px;
+  padding: 4px 9px;
+  font-size: 0.66rem;
+}
+
+.project-bottom h3 {
+  font-size: 1.02rem;
+}
+
+.circle-link,
+.price-head a,
+.carousel-btn,
+.footer-newsletter button {
+  width: 34px;
+  height: 34px;
+}
+
+.journey-card,
+.price-card,
+.testimonial-card {
+  padding: 22px;
+}
+
+.timeline {
+  gap: 18px;
+}
+
+.price-card ul {
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.contact-grid {
+  gap: 44px;
+}
+
+.testimonial-window {
+  margin: 30px auto 20px;
+}
+
+.blog-image {
+  margin-bottom: 12px;
+}
+
+.faq-question {
+  min-height: 56px;
+  padding: 14px 18px;
+}
+
+.faq-question span {
+  font-size: 0.98rem;
+}
+
+.footer-heading {
+  padding: 44px 0 24px;
+}
+
+.footer-grid {
+  gap: 28px;
+  padding: 28px 0 38px;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 54px 0;
+  }
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, 0.8fr);
+  }
+
+  .hero-visual {
+    min-height: 340px;
+    order: 0;
+  }
+
+  .gold-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-photo {
+    top: 46px;
+    width: 254px;
+    height: 254px;
+  }
+
+  .about-grid {
+    gap: 32px;
+  }
+
+  .about-visual {
+    min-height: 300px;
+  }
+
+  .about-photo {
+    width: 235px;
+    height: 235px;
+  }
+}
+
+@media (max-width: 840px) {
+  .section {
+    padding: 44px 0;
+  }
+
+  .site-header {
+    padding-top: 10px;
+  }
+
+  .nav-shell {
+    min-height: 48px;
+  }
+
+  .hero {
+    padding: 86px 0 36px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5.6vw, 2.7rem);
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 4vw, 2rem);
+  }
+
+  .hero-copy p {
+    font-size: 0.86rem;
+  }
+
+  .hero-visual {
+    min-height: 280px;
+  }
+
+  .gold-circle {
+    width: 230px;
+    height: 230px;
+  }
+
+  .hero-photo {
+    top: 38px;
+    width: 210px;
+    height: 210px;
+  }
+
+  .badge-one {
+    bottom: 58px;
+  }
+
+  .badge-two {
+    bottom: 18px;
+  }
+
+  .hire-me-badge {
+    top: 28px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-top {
+    align-items: flex-end;
+    flex-direction: row;
+  }
+
+  .project-image {
+    min-height: 0;
+  }
+
+  .pricing-grid,
+  .blogs-grid,
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 16px;
+  }
+
+  .service-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .service-card p {
+    font-size: 0.78rem;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    min-height: 270px;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+
+  .hero {
+    padding: 78px 0 30px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-visual {
+    min-height: 248px;
+    order: -1;
+  }
+
+  .gold-circle {
+    width: 210px;
+    height: 210px;
+  }
+
+  .hero-photo {
+    top: 32px;
+    width: 194px;
+    height: 194px;
+  }
+
+  .floating-badge {
+    padding: 7px 10px;
+    font-size: 0.66rem;
+  }
+
+  .badge-one {
+    right: 8px;
+    bottom: 48px;
+  }
+
+  .badge-two {
+    left: 8px;
+    bottom: 14px;
+  }
+
+  .hire-me-badge {
+    top: 22px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+    border-width: 4px;
+  }
+
+  .hire-me-badge span {
+    width: 30px;
+    font-size: 0.46rem;
+  }
+
+  .hello-pill {
+    min-height: 30px;
+    margin-bottom: 12px;
+    padding: 5px 12px;
+    font-size: 0.84rem;
+  }
+
+  h1 {
+    font-size: clamp(1.78rem, 9vw, 2.25rem);
+  }
+
+  .hero-copy p {
+    margin: 12px 0 16px;
+    font-size: 0.82rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+    flex: 1 1 150px;
+  }
+
+  .btn {
+    min-height: 36px;
+    padding: 9px 13px;
+    font-size: 0.76rem;
+  }
+
+  .marquee {
+    padding: 8px 0;
+  }
+
+  .marquee-track span,
+  .marquee-track b {
+    font-size: 0.88rem;
+  }
+
+  .services-grid,
+  .projects-grid,
+  .pricing-grid,
+  .blogs-grid,
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .about-visual {
+    display: flex;
+    min-height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 224px;
+  }
+
+  .about-photo {
+    top: 0;
+    width: 205px;
+    height: 205px;
+    transform: translateX(-50%);
+  }
+
+  .skill-tag {
+    position: static;
+    margin: 3px;
+    padding: 5px 8px;
+    font-size: 0.58rem;
+  }
+
+  .performance-metrics {
+    gap: 6px;
+  }
+
+  .metric-chip {
+    min-height: 28px;
+    padding: 4px 7px;
+  }
+
+  .tool-icon {
+    width: 78px;
+    height: 78px;
+    padding: 16px;
+    border-width: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-top: 74px;
+  }
+
+  .contact-nav {
+    display: inline-flex;
+  }
+
+  .nav-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-visual {
+    min-height: 228px;
+  }
+
+  .gold-circle {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-photo {
+    top: 30px;
+    width: 174px;
+    height: 174px;
+  }
+
+  .badge-one {
+    right: 0;
+    bottom: 42px;
+  }
+
+  .badge-two {
+    left: 0;
+    bottom: 10px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+  }
+}
